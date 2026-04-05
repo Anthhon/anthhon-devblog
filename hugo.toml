@@ -6,8 +6,8 @@ paginate = 5
 
 [params]
   description = "Programação Low-Level, Desenvolvimento de Sistemas e mais..."
-  author = "Anthony"
-  tagline = "Low-level programming tutorials, systems dev & C book"
+  author = "Anthony Carneiro da Silva"
+  tagline = "Programação em baixo nível, desenvolvimento de sistemas e livro de fundamentos sobre C."
   university = "UFC — Universidade Federal do Ceará"
   github = "https://github.com/Anthhon"
   instagram = "https://instagram.com/anthhon.c"

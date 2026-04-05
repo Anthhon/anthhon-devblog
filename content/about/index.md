@@ -6,8 +6,8 @@ type: "about"
 academics:
   - degree: "Engenharia da Computação"
     institution: "UFC — Universidade Federal do Ceará"
-    period: "2022 – present"
-    description: "Sobral, CE, Brasil. Foco em desenvolvimento de sistemas e embarcados."
+    period: "2021 - Em andamento"
+    description: "CE - Sobral. Foco em desenvolvimento de sistemas e embarcados."
 
 skills:
   - "C"

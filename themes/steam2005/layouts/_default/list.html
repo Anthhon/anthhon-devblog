@@ -23,14 +23,14 @@
         {{ end }}
       {{ end }}
       {{ with .ReadingTime }}
-        <span>~{{ . }} min read</span>
+        <span>~{{ . }} minutos de leitura</span>
       {{ end }}
     </div>
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     <p class="excerpt">
       {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 "..." }}{{ end }}
     </p>
-    <a href="{{ .Permalink }}" class="read-more">&#x25BA; Read More</a>
+    <a href="{{ .Permalink }}" class="read-more">&#x25BA; Veja mais</a>
   </article>
   {{ else }}
   <div class="post-item" style="color: var(--text-dim); font-style: italic; font-size:12px;">

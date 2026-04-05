@@ -2,7 +2,7 @@
 
 <!-- ===== BOOK SPOTLIGHT (hero) ===== -->
 <div class="section-header">
-  <span class="section-header-label">&#x25BA; <strong>FEATURED</strong></span>
+  <span class="section-header-label">&#x25BA; <strong>DESTAQUES</strong></span>
 </div>
 <div class="section-underline"></div>
 
@@ -10,7 +10,6 @@
   <!-- Book cover placeholder -->
   <div class="hero-cover-placeholder">
     <div class="hero-cover-inner">
-      <div class="hero-cover-icon">&#x1F4D6;</div>
       <div class="hero-cover-title-main">Descompilando</div>
       <div class="hero-cover-title-sub">Do código da máquina<br/>para o ser humano</div>
     </div>
@@ -18,7 +17,7 @@
 
   <!-- Book text -->
   <div class="hero-text">
-    <div class="hero-eyebrow">New Book Available</div>
+    <div class="hero-eyebrow">LIVRO DISPONÍVEL</div>
     <h1 class="hero-title">
       Descompilando<br />
       <em style="font-size:60%; color: var(--text-muted); font-style:normal;">
@@ -26,19 +25,30 @@
       </em>
     </h1>
     <p class="hero-desc">
-      A deep dive into C programming, assembly, and systems — written in Portuguese for
-      developers who want to truly understand what the machine is doing.
+      Um livro completo sobre programação em C, escrito em Português para aqueles 
+      que desejam se aprender e se aprofundar de fato no mundo da programação.
     </p>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
-      <a href="{{ "/book/" | relURL }}" class="btn-primary">&#x1F4E5; Get the Book</a>
-      <a href="{{ "/book/" | relURL }}" class="btn-secondary">&#x2139; More Info</a>
+      <a href="{{ "/book/" | relURL }}" class="btn-primary">
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+      <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+      </svg>
+      Baixe o livro
+      </a>
+      <a href="{{ "/book/" | relURL }}" class="btn-secondary">
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.408-5.5a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM10 10a1 1 0 1 0 0 2h1v3h-1a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-1v-4a1 1 0 0 0-1-1h-2Z" clip-rule="evenodd"/>
+      </svg>
+      Mais informações
+      </a>
     </div>
   </div>
 </div>
 
 <!-- ===== LATEST POSTS ===== -->
 <div class="section-header" style="margin-top: 1px;">
-  <span class="section-header-label">&#x25BA; <strong>LATEST POSTS</strong></span>
+  <span class="section-header-label">&#x25BA; <strong>ÚLTIMOS POSTS</strong></span>
 </div>
 <div class="section-underline"></div>
 
@@ -62,7 +72,7 @@
   </article>
   {{ else }}
   <div class="post-item" style="color: var(--text-dim); font-style: italic; font-size:12px;">
-    No posts yet — check back soon!
+    Nenhum post feito, cheque novamente mais tarde!
   </div>
   {{ end }}
 </div>

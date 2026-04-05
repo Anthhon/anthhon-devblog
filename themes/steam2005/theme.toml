@@ -1,8 +1,8 @@
 name = "steam2005"
 license = "MIT"
 licenselink = "https://opensource.org/licenses/MIT"
-description = "A Steam 2005 inspired dark portal theme for Hugo"
-homepage = "https://github.com/yourusername/anthony-devblog"
+description = "Tema inspirado pela estética do portal da Steam 2005, feito com Hugo."
+homepage = "https://github.com/Anthhon/anthony-devblog"
 tags = ["blog", "dark", "retro", "developer"]
 features = ["blog", "syntax highlighting", "responsive"]
 min_version = "0.110.0"
