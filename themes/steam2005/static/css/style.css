@@ -55,14 +55,6 @@ html { font-size: 13px; scroll-behavior: smooth; }
 
 body {
   background-color: var(--black);
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(255,255,255,0.012) 2px,
-      rgba(255,255,255,0.012) 4px
-    );
   color: var(--text-base);
   font-family: var(--font-body);
   min-height: 100vh;
@@ -88,7 +80,7 @@ img { max-width: 100%; display: block; }
    HEADER / TOPBAR
    ============================================================ */
 .site-header {
-  background: linear-gradient(180deg, #1c1e0e 0%, #111209 60%, #0a0b05 100%);
+  background: var(--darkest);
   border-bottom: 2px solid var(--olive-dark);
   padding: 0;
 }
@@ -131,7 +123,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(154,170,64,0.15) 0%, transparent 60%);
+  background: rgba(154,170,64,0.12);
 }
 
 .brand-text-group { display: flex; flex-direction: column; }
@@ -165,7 +157,6 @@ img { max-width: 100%; display: block; }
 
 /* ---- NAV BAR ---- */
 .site-nav {
-  background: linear-gradient(180deg, #2a2c18 0%, #222414 100%);
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
   display: flex;
@@ -219,7 +210,7 @@ img { max-width: 100%; display: block; }
 }
 
 .sidebar-block-title {
-  background: linear-gradient(180deg, var(--olive) 0%, var(--olive-dark) 100%);
+  background: var(--olive);
   font-family: var(--font-head);
   font-size: 11px;
   font-weight: 600;
@@ -272,7 +263,7 @@ img { max-width: 100%; display: block; }
 .book-mini-cover {
   width: 100%;
   aspect-ratio: 3/4;
-  background: linear-gradient(135deg, #1a1f0a 0%, #2a3010 40%, #1a1f0a 100%);
+  background: var(--olive-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,13 +286,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 8px,
-    rgba(154,170,64,0.04) 8px,
-    rgba(154,170,64,0.04) 9px
-  );
+  background: rgba(154,170,64,0.04);
 }
 
 .book-mini-cover-title {
@@ -342,7 +327,7 @@ img { max-width: 100%; display: block; }
 .btn-mini {
   display: block;
   text-align: center;
-  background: linear-gradient(180deg, var(--olive-mid) 0%, var(--olive-dark) 100%);
+  background: var(--olive-mid);
   border: 1px solid var(--olive-light);
   color: #d8dca8 !important;
   font-family: var(--font-head);
@@ -356,7 +341,7 @@ img { max-width: 100%; display: block; }
   transition: background 0.1s;
 }
 .btn-mini:hover {
-  background: linear-gradient(180deg, var(--olive-light) 0%, var(--olive-mid) 100%);
+  background: var(--olive-light);
 }
 
 /* Social links in sidebar */
@@ -405,7 +390,7 @@ img { max-width: 100%; display: block; }
    SECTION HEADER (like "GET THE GAMES" in Steam 2005)
    ============================================================ */
 .section-header {
-  background: linear-gradient(180deg, #2a2c18 0%, #1c1e10 100%);
+  background: #2a2c18;
   border-bottom: 1px solid var(--border-dark);
   padding: 6px 12px 5px;
   display: flex;
@@ -446,7 +431,7 @@ img { max-width: 100%; display: block; }
    FEATURED / HERO BLOCK (homepage spotlight)
    ============================================================ */
 .hero-block {
-  background: linear-gradient(135deg, #141610 0%, #1e2010 50%, #141610 100%);
+  background: #141610;
   border-bottom: 1px solid var(--border-dark);
   padding: 24px 20px 20px;
   display: grid;
@@ -461,20 +446,14 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 40px,
-    rgba(154,170,64,0.025) 40px,
-    rgba(154,170,64,0.025) 41px
-  );
+  background: rgba(154,170,64,0.025);
   pointer-events: none;
 }
 
 .hero-cover-placeholder {
   aspect-ratio: 3/4;
   max-width: 160px;
-  background: linear-gradient(135deg, #1a1f0a 0%, #2d3515 50%, #1a1f0a 100%);
+  background: var(--olive-dark);
   border: 1px solid var(--olive-mid);
   border-radius: var(--radius);
   display: flex;
@@ -492,17 +471,14 @@ img { max-width: 100%; display: block; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--olive-bright), transparent);
+  background: var(--olive-bright);
 }
 
 .hero-cover-placeholder::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg, transparent, transparent 6px,
-    rgba(154,170,64,0.03) 6px, rgba(154,170,64,0.03) 7px
-  );
+  background: rgba(154,170,64,0.03);
 }
 
 .hero-cover-inner {
@@ -576,7 +552,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(180deg, var(--olive-light) 0%, var(--olive) 50%, var(--olive-dark) 100%);
+  background: var(--olive-light);
   border: 1px solid var(--olive-bright);
   color: #e8ecb8 !important;
   font-family: var(--font-head);
@@ -592,7 +568,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 .btn-primary:hover {
-  background: linear-gradient(180deg, var(--olive-bright) 0%, var(--olive-light) 50%, var(--olive-mid) 100%);
+  background: var(--olive-bright);
   box-shadow: 0 3px 8px rgba(0,0,0,0.6);
 }
 
@@ -600,7 +576,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(180deg, #2a2c1e 0%, #1e2016 100%);
+  background: #2a2c1e;
   border: 1px solid var(--border-mid);
   color: var(--text-muted) !important;
   font-family: var(--font-head);
@@ -615,7 +591,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 .btn-secondary:hover {
-  background: linear-gradient(180deg, #333520 0%, #252818 100%);
+  background: #333520;
   color: var(--text-bright) !important;
   border-color: var(--border-light);
 }
@@ -624,7 +600,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(180deg, #3a2200 0%, #2a1800 100%);
+  background: #3a2200;
   border: 1px solid var(--amber);
   color: var(--amber-light) !important;
   font-family: var(--font-head);
@@ -638,7 +614,7 @@ img { max-width: 100%; display: block; }
   transition: all 0.1s;
 }
 .btn-download:hover {
-  background: linear-gradient(180deg, #5a3500 0%, #3a2200 100%);
+  background: #5a3500;
   color: var(--gold-light) !important;
 }
 
@@ -727,7 +703,7 @@ img { max-width: 100%; display: block; }
 }
 
 .news-section-title {
-  background: linear-gradient(180deg, #222418 0%, #1a1c10 100%);
+  background: #222418;
   border-bottom: 1px solid var(--border-dark);
   font-family: var(--font-head);
   font-size: 11px;
@@ -915,7 +891,7 @@ img { max-width: 100%; display: block; }
 .book-cover-large {
   width: 200px;
   aspect-ratio: 2/3;
-  background: linear-gradient(135deg, #141908 0%, #2a3510 40%, #1a2008 100%);
+  background: var(--olive-dark);
   border: 1px solid var(--olive-mid);
   box-shadow: var(--shadow-heavy), 6px 6px 0 rgba(0,0,0,0.4);
   display: flex;
@@ -933,17 +909,14 @@ img { max-width: 100%; display: block; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--olive-bright), transparent);
+  background: var(--olive-bright);
 }
 
 .book-cover-large::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg, transparent, transparent 8px,
-    rgba(154,170,64,0.04) 8px, rgba(154,170,64,0.04) 9px
-  );
+  background: rgba(154,170,64,0.04);
 }
 
 .book-cover-icon-large {
@@ -1066,7 +1039,7 @@ img { max-width: 100%; display: block; }
 .about-avatar {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, var(--olive-dark), #0a0b05);
+  background: var(--olive-dark);
   border: 2px solid var(--olive-mid);
   border-radius: var(--radius);
   display: flex;
@@ -1229,7 +1202,7 @@ img { max-width: 100%; display: block; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: linear-gradient(180deg, #0d0e08 0%, #080907 100%);
+  background: #0d0e08;
   border-top: 1px solid var(--border-dark);
   padding: 10px 16px 8px;
   text-align: center;

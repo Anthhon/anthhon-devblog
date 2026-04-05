@@ -28,13 +28,14 @@
 
       {{ with .Params.stats }}
       <div class="book-stat-row">
-        {{ with .pages }}<div class="book-stat"><strong>{{ . }}</strong><span>páginas</span></div>{{ end }}
-        {{ with .version }}<div class="book-stat"><strong>{{ . }}</strong><span>versão</span></div>{{ end }}
-        {{ with .language }}<div class="book-stat"><strong>{{ . }}</strong><span>idioma</span></div>{{ end }}
-        {{ with .license }}<div class="book-stat"><strong>{{ . }}</strong><span>licensa</span></div>{{ end }}
+        {{ with .license }}<div class="book-stat"><strong>{{ . }}</strong><span>LICENÇA</span></div>{{ end }}
+        {{ with .language }}<div class="book-stat"><strong>{{ . }}</strong><span>IDIOMA</span></div>{{ end }}
+        {{ with .format }}<div class="book-stat"><strong>{{ . }}</strong><span>FORMATOS</span></div>{{ end }}
+        {{ with .pages }}<div class="book-stat"><strong>{{ . }}</strong><span>PÁGINAS</span></div>{{ end }}
       </div>
       {{ else }}
       <div class="book-stat-row">
+        {{ with .pages }}<div class="book-stat"><strong>{{ . }}</strong><span>PÁGINAS</span></div>{{ end }}
         <div class="book-stat"><strong>PT-BR</strong><span>idioma</span></div>
         <div class="book-stat"><strong>GRATUITO</strong><span>preço</span></div>
         <div class="book-stat"><strong>PDF + EPUB</strong><span>formato</span></div>

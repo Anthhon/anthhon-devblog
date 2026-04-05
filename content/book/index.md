@@ -1,6 +1,6 @@
 ---
 title: "Descompilando"
-description: "Um guia completo de programação em C e sistemas de baixo nível, escrito em português. Do código C ao binário e de volta — para desenvolvedores que querem entender o que a máquina realmente faz."
+description: "Um guia completo de programação em C, do básico ao avançado, escrito em português para desenvolvedores que querem aprender a programar e entender de fato os conceitos de base!"
 layout: "single"
 type: "book"
 
@@ -11,7 +11,9 @@ type: "book"
 
 stats:
   language: "PT-BR"
-  license: "Free"
+  license: "Gratuito"
+  format: "PDF + EPUB"
+  pages: "123"
 
 ---
 
