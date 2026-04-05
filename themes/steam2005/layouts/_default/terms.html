@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<div class="section-header">
+  <span class="section-header-label">&#x25BA; <strong>TAGS</strong></span>
+</div>
+<div class="section-underline"></div>
+
+<div class="tags-cloud">
+  {{ range .Data.Terms.Alphabetical }}
+  <a href="{{ .Page.Permalink }}" class="tag-item">
+    {{ .Page.Title }} ({{ .Count }})
+  </a>
+  {{ end }}
+</div>
+
+{{ end }}

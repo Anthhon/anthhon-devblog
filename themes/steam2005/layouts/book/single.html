@@ -1,0 +1,74 @@
+{{ define "main" }}
+
+<div class="section-header">
+  <span class="section-header-label">&#x25BA; <strong>THE BOOK</strong></span>
+</div>
+<div class="section-underline"></div>
+
+<div class="book-page">
+
+  <!-- BOOK SHOWCASE -->
+  <div class="book-showcase">
+
+    <!-- Cover (placeholder until real image) -->
+    <div class="book-cover-large">
+      <div class="book-cover-icon-large">&#x1F4D6;</div>
+      <div class="book-cover-title-large">Descompilando</div>
+      <div class="book-cover-subtitle-large">Do código da máquina<br/>para o ser humano</div>
+      <div class="book-author-badge">Anthony &mdash; UFC/CE</div>
+    </div>
+
+    <!-- Book info -->
+    <div class="book-info">
+      <h1 class="book-info-title">Descompilando</h1>
+      <p class="book-info-subtitle">Do código da máquina para o ser humano</p>
+
+      <p class="book-info-desc">
+        {{ .Params.description | default "Um guia completo de programação em C e sistemas de baixo nível, escrito em português para desenvolvedores que querem entender o que a máquina realmente faz — do código C ao binário, e de volta." }}
+      </p>
+
+      {{ with .Params.stats }}
+      <div class="book-stat-row">
+        {{ with .pages }}<div class="book-stat"><strong>{{ . }}</strong><span>pages</span></div>{{ end }}
+        {{ with .version }}<div class="book-stat"><strong>{{ . }}</strong><span>version</span></div>{{ end }}
+        {{ with .language }}<div class="book-stat"><strong>{{ . }}</strong><span>language</span></div>{{ end }}
+        {{ with .license }}<div class="book-stat"><strong>{{ . }}</strong><span>license</span></div>{{ end }}
+      </div>
+      {{ else }}
+      <div class="book-stat-row">
+        <div class="book-stat"><strong>PT-BR</strong><span>language</span></div>
+        <div class="book-stat"><strong>Free</strong><span>license</span></div>
+        <div class="book-stat"><strong>PDF + EPUB</strong><span>formats</span></div>
+      </div>
+      {{ end }}
+
+      <hr class="divider" />
+
+      <!-- Download buttons -->
+      <div class="download-group">
+        {{ with .Params.pdf_url }}
+        <a href="{{ . }}" class="btn-download" download>&#x1F4E5; Download PDF</a>
+        {{ else }}
+        <a href="#" class="btn-download" style="opacity:0.5; cursor:not-allowed;">&#x1F4E5; PDF (coming soon)</a>
+        {{ end }}
+
+        {{ with .Params.epub_url }}
+        <a href="{{ . }}" class="btn-download" download>&#x1F4D3; Download EPUB</a>
+        {{ end }}
+
+        {{ with .Params.github_url }}
+        <a href="{{ . }}" class="btn-secondary" target="_blank">&#x1F4C2; Source on GitHub</a>
+        {{ end }}
+      </div>
+    </div>
+  </div><!-- .book-showcase -->
+
+  <!-- Book content (from markdown) -->
+  {{ if .Content }}
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+</div><!-- .book-page -->
+{{ end }}

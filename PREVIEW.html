@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anthony DevBlog — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   STEAM 2005 AESTHETIC — Anthony DevBlog
+   ============================================================ */
+:root{
+  --black:#0a0a08;--darkest:#111109;--dark:#1a1a15;
+  --panel-bg:#1e1e18;--panel-mid:#252520;--panel-light:#2e2e28;
+  --border-dark:#333328;--border-mid:#444438;--border-light:#5a5a48;
+  --olive-dark:#3a3d1e;--olive:#4f5626;--olive-mid:#636b30;
+  --olive-light:#7a8438;--olive-bright:#9aaa40;
+  --gold:#c8a830;--gold-light:#e0c050;--amber:#d4820a;--amber-light:#f09820;
+  --text-dim:#6a6a58;--text-mid:#909078;--text-muted:#b0b098;
+  --text-base:#cccbb8;--text-bright:#e8e6d0;--text-white:#f2f0e0;
+  --link:#a8b850;--link-hover:#c8d860;
+  --font-head:'Oswald','Arial Narrow',sans-serif;
+  --font-body:'PT Serif',Georgia,serif;
+  --font-mono:'Source Code Pro','Courier New',monospace;
+  --radius:2px;--shadow:0 2px 8px rgba(0,0,0,.7);--shadow-heavy:0 4px 16px rgba(0,0,0,.9);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:13px;scroll-behavior:smooth}
+body{
+  background-color:var(--black);
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.012) 2px,rgba(255,255,255,.012) 4px);
+  color:var(--text-base);font-family:var(--font-body);min-height:100vh;line-height:1.5;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}
+img{max-width:100%;display:block}
+.site-wrapper{max-width:960px;margin:0 auto;background:var(--darkest);border-left:1px solid var(--border-dark);border-right:1px solid var(--border-dark);min-height:100vh}
+
+/* HEADER */
+.site-header{background:linear-gradient(180deg,#1c1e0e 0%,#111209 60%,#0a0b05 100%);border-bottom:2px solid var(--olive-dark)}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 8px;border-bottom:1px solid #222218}
+.site-brand{display:flex;align-items:center;gap:12px;text-decoration:none!important}
+.brand-logo{width:40px;height:40px;border:2px solid var(--olive-mid);background:var(--olive-dark);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:18px;color:var(--olive-bright);flex-shrink:0;position:relative;overflow:hidden}
+.brand-logo::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(154,170,64,.15) 0%,transparent 60%)}
+.brand-text-group{display:flex;flex-direction:column}
+.brand-title{font-family:var(--font-head);font-size:20px;font-weight:700;color:var(--text-white);letter-spacing:1px;text-transform:uppercase;line-height:1;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.brand-tagline{font-family:var(--font-mono);font-size:9px;color:var(--olive-light);letter-spacing:.5px;margin-top:3px}
+.header-meta{text-align:right;font-family:var(--font-mono);font-size:9px;color:var(--text-dim);line-height:1.6}
+.site-nav{background:linear-gradient(180deg,#2a2c18 0%,#222414 100%);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);display:flex;padding:0 8px}
+.site-nav a{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);padding:8px 14px;border-right:1px solid var(--border-dark);text-decoration:none;transition:background .1s,color .1s;display:block}
+.site-nav a:first-child{border-left:1px solid var(--border-dark)}
+.site-nav a:hover,.site-nav a.active{background:var(--olive-dark);color:var(--olive-bright);text-decoration:none}
+
+/* LAYOUT */
+.page-body{display:grid;grid-template-columns:195px 1fr;gap:0;min-height:calc(100vh - 200px)}
+.sidebar{background:var(--panel-bg);border-right:1px solid var(--border-dark);padding-bottom:20px}
+.main-content{background:var(--dark);padding:0}
+
+/* SIDEBAR BLOCKS */
+.sidebar-block{border-bottom:1px solid var(--border-dark)}
+.sidebar-block-title{background:linear-gradient(180deg,var(--olive) 0%,var(--olive-dark) 100%);font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#d8dca8;padding:5px 10px 4px;border-bottom:1px solid var(--border-dark);display:flex;align-items:center;gap:6px}
+.sidebar-block-title::before{content:'';display:block;width:3px;height:10px;background:var(--olive-bright);flex-shrink:0}
+.sidebar-block-body{padding:8px 10px;font-size:11px;line-height:1.7}
+.sidebar-block-body ul{list-style:none}
+.sidebar-block-body ul li::before{content:'· ';color:var(--olive-light)}
+.sidebar-block-body a{color:var(--text-muted);font-size:11px}
+.sidebar-block-body a:hover{color:var(--link-hover)}
+.book-mini{margin:8px 6px;background:var(--panel-mid);border:1px solid var(--border-mid);border-radius:var(--radius);overflow:hidden}
+.book-mini-cover{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a1f0a 0%,#2a3010 40%,#1a1f0a 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:10px;border-bottom:1px solid var(--border-dark);position:relative;overflow:hidden}
+.book-mini-cover::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--olive-bright)}
+.book-mini-cover::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(154,170,64,.04) 8px,rgba(154,170,64,.04) 9px)}
+.book-mini-cover-title{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--olive-bright);text-align:center;line-height:1.3;text-transform:uppercase;letter-spacing:.5px;position:relative;z-index:1}
+.book-mini-cover-sub{font-family:var(--font-body);font-size:8px;color:var(--text-muted);text-align:center;margin-top:4px;font-style:italic;position:relative;z-index:1}
+.book-mini-body{padding:6px 8px}
+.book-mini-body p{font-size:9px;color:var(--text-dim);line-height:1.5;margin-bottom:5px}
+.btn-mini{display:block;text-align:center;background:linear-gradient(180deg,var(--olive-mid) 0%,var(--olive-dark) 100%);border:1px solid var(--olive-light);color:#d8dca8!important;font-family:var(--font-head);font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 8px;text-decoration:none!important;border-radius:var(--radius);transition:background .1s}
+.btn-mini:hover{background:linear-gradient(180deg,var(--olive-light) 0%,var(--olive-mid) 100%)}
+.social-links{display:flex;flex-direction:column;gap:4px;padding:8px 10px}
+.social-link{display:flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:10px;letter-spacing:.5px;color:var(--text-muted)!important;padding:4px 6px;border:1px solid var(--border-dark);background:var(--panel-mid);border-radius:var(--radius);text-decoration:none!important;transition:background .1s,color .1s,border-color .1s}
+.social-link:hover{background:var(--olive-dark);color:var(--olive-bright)!important;border-color:var(--olive-mid)}
+.social-link .icon{font-size:12px;width:14px;text-align:center;flex-shrink:0}
+
+/* SECTION HEADER */
+.section-header{background:linear-gradient(180deg,#2a2c18 0%,#1c1e10 100%);border-bottom:1px solid var(--border-dark);padding:6px 12px 5px;display:flex;align-items:center;gap:8px}
+.section-header-label{font-family:var(--font-head);font-size:10px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+.section-header-label strong{font-weight:700;color:var(--text-bright)}
+.section-header::after{content:'';flex:1;height:1px;background:var(--border-dark);margin-left:8px}
+.section-underline{width:28px;height:2px;background:var(--olive-bright);margin:4px 12px 0}
+
+/* HERO BLOCK */
+.hero-block{background:linear-gradient(135deg,#141610 0%,#1e2010 50%,#141610 100%);border-bottom:1px solid var(--border-dark);padding:24px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;position:relative;overflow:hidden}
+.hero-block::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(154,170,64,.025) 40px,rgba(154,170,64,.025) 41px);pointer-events:none}
+.hero-cover-placeholder{aspect-ratio:3/4;max-width:160px;background:linear-gradient(135deg,#1a1f0a 0%,#2d3515 50%,#1a1f0a 100%);border:1px solid var(--olive-mid);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 12px;box-shadow:var(--shadow-heavy),inset 0 0 40px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.hero-cover-placeholder::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--olive-bright),transparent)}
+.hero-cover-placeholder::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 6px,rgba(154,170,64,.03) 6px,rgba(154,170,64,.03) 7px)}
+.hero-cover-inner{position:relative;z-index:1;text-align:center}
+.hero-cover-icon{font-size:36px;margin-bottom:8px;opacity:.7}
+.hero-cover-title-main{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--olive-bright);text-transform:uppercase;letter-spacing:1px;line-height:1.2}
+.hero-cover-title-sub{font-family:var(--font-body);font-size:9px;color:var(--text-mid);font-style:italic;margin-top:6px;line-height:1.4}
+.hero-text{position:relative;z-index:1}
+.hero-eyebrow{font-family:var(--font-head);font-size:10px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--olive-mid);margin-bottom:6px}
+.hero-title{font-family:var(--font-head);font-size:26px;font-weight:700;line-height:1.1;color:var(--text-white);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.hero-title em{font-style:normal;color:var(--olive-bright)}
+.hero-desc{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;max-width:260px}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,var(--olive-light) 0%,var(--olive) 50%,var(--olive-dark) 100%);border:1px solid var(--olive-bright);color:#e8ecb8!important;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 16px;border-radius:var(--radius);text-decoration:none!important;box-shadow:0 2px 4px rgba(0,0,0,.5);transition:all .1s;cursor:pointer}
+.btn-primary:hover{background:linear-gradient(180deg,var(--olive-bright) 0%,var(--olive-light) 50%,var(--olive-mid) 100%)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,#2a2c1e 0%,#1e2016 100%);border:1px solid var(--border-mid);color:var(--text-muted)!important;font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:var(--radius);text-decoration:none!important;transition:all .1s;cursor:pointer}
+.btn-secondary:hover{background:linear-gradient(180deg,#333520 0%,#252818 100%);color:var(--text-bright)!important;border-color:var(--border-light)}
+
+/* POSTS LIST */
+.posts-list{padding:0}
+.post-item{border-bottom:1px solid var(--border-dark);padding:12px 14px;transition:background .1s}
+.post-item:hover{background:rgba(154,170,64,.03)}
+.post-meta{font-family:var(--font-mono);font-size:9px;color:var(--text-dim);letter-spacing:.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.post-tag{background:var(--olive-dark);color:var(--olive-light);border:1px solid var(--olive-mid);padding:1px 5px;font-size:8px;letter-spacing:1px;text-transform:uppercase;border-radius:1px;font-family:var(--font-head)}
+.post-item h2{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--text-bright);margin-bottom:5px;line-height:1.2;text-transform:uppercase}
+.post-item h2 a{color:inherit;text-decoration:none}
+.post-item h2 a:hover{color:var(--olive-bright)}
+.post-item .excerpt{font-size:12px;color:var(--text-muted);line-height:1.6;max-width:540px}
+.post-item .read-more{font-family:var(--font-head);font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-light);margin-top:6px;display:inline-flex;align-items:center;gap:4px}
+.post-item .read-more:hover{color:var(--link-hover)}
+
+/* FOOTER */
+.site-footer{background:linear-gradient(180deg,#0d0e08 0%,#080907 100%);border-top:1px solid var(--border-dark);padding:10px 16px 8px;text-align:center}
+.footer-copy{font-family:var(--font-mono);font-size:9px;color:var(--text-dim);line-height:1.8}
+.footer-links{display:flex;justify-content:center;gap:12px;margin-top:4px}
+.footer-links a{font-family:var(--font-mono);font-size:9px;color:var(--text-dim)}
+.footer-links a:hover{color:var(--link-hover)}
+
+/* TAB SWITCHER for preview */
+.preview-tabs{display:flex;background:#0a0a08;border-bottom:2px solid var(--olive-dark);padding:6px 8px 0;gap:2px;position:sticky;top:0;z-index:100}
+.tab-btn{font-family:var(--font-head);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border-dark);border-bottom:none;background:var(--panel-bg);color:var(--text-dim);cursor:pointer;border-radius:2px 2px 0 0;transition:all .1s}
+.tab-btn.active,.tab-btn:hover{background:var(--olive-dark);color:var(--olive-bright);border-color:var(--olive-mid)}
+.tab-badge{font-size:8px;background:var(--olive);color:#d8dca8;padding:1px 4px;border-radius:1px;margin-left:4px}
+.page-view{display:none}
+.page-view.active{display:block}
+
+/* BOOK PAGE SPECIFIC */
+.book-page{padding:20px 24px}
+.book-showcase{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border-dark)}
+.book-cover-large{width:200px;aspect-ratio:2/3;background:linear-gradient(135deg,#141908 0%,#2a3510 40%,#1a2008 100%);border:1px solid var(--olive-mid);box-shadow:var(--shadow-heavy),6px 6px 0 rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 14px;position:relative;overflow:hidden;border-radius:var(--radius)}
+.book-cover-large::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--olive-bright),transparent)}
+.book-cover-large::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(154,170,64,.04) 8px,rgba(154,170,64,.04) 9px)}
+.book-cover-icon-large{font-size:52px;margin-bottom:12px;position:relative;z-index:1;opacity:.8}
+.book-cover-title-large{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--olive-bright);text-transform:uppercase;letter-spacing:1.5px;text-align:center;line-height:1.2;position:relative;z-index:1}
+.book-cover-subtitle-large{font-family:var(--font-body);font-size:9px;font-style:italic;color:var(--text-mid);text-align:center;margin-top:8px;line-height:1.5;position:relative;z-index:1}
+.book-author-badge{position:absolute;bottom:10px;left:10px;right:10px;font-family:var(--font-mono);font-size:8px;color:var(--text-dim);text-align:center;z-index:1;letter-spacing:.5px}
+.book-info-title{font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--text-white);text-transform:uppercase;line-height:1.1;margin-bottom:4px}
+.book-info-subtitle{font-family:var(--font-body);font-size:13px;font-style:italic;color:var(--text-muted);margin-bottom:14px}
+.book-info-desc{font-size:12px;color:var(--text-base);line-height:1.7;margin-bottom:16px}
+.download-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.btn-download{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,#3a2200 0%,#2a1800 100%);border:1px solid var(--amber);color:var(--amber-light)!important;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:var(--radius);text-decoration:none!important;transition:all .1s}
+.btn-download:hover{background:linear-gradient(180deg,#5a3500 0%,#3a2200 100%);color:var(--gold-light)!important}
+.book-stat-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.book-stat{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);display:flex;flex-direction:column;gap:2px}
+.book-stat strong{font-family:var(--font-head);font-size:14px;color:var(--olive-bright);font-weight:700}
+.divider{border:none;border-top:1px solid var(--border-dark);margin:16px 0}
+
+/* ABOUT PAGE */
+.about-page{padding:20px 24px}
+.about-header{display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--border-dark);margin-bottom:20px}
+.about-avatar{width:100px;height:100px;background:linear-gradient(135deg,var(--olive-dark),#0a0b05);border:2px solid var(--olive-mid);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:40px;flex-shrink:0}
+.about-name{font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--text-white);text-transform:uppercase;letter-spacing:1px}
+.about-role{font-family:var(--font-mono);font-size:10px;color:var(--olive-light);letter-spacing:1px;margin-top:4px}
+.about-content p{font-size:13px;line-height:1.75;color:var(--text-base);margin-bottom:14px}
+.academic-card{background:var(--panel-mid);border:1px solid var(--border-mid);border-left:3px solid var(--olive-bright);padding:12px 14px;margin:16px 0;border-radius:var(--radius)}
+.academic-card-title{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--text-bright);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.academic-card-inst{font-family:var(--font-mono);font-size:10px;color:var(--olive-light);margin-bottom:5px}
+.academic-card p{font-size:11px;color:var(--text-dim);line-height:1.5;margin:0}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin:14px 0}
+.skill-tag{background:var(--panel-mid);border:1px solid var(--border-dark);color:var(--text-muted);font-family:var(--font-head);font-size:10px;letter-spacing:.5px;text-transform:uppercase;padding:5px 8px;border-radius:var(--radius);text-align:center}
+.social-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.social-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:var(--radius);font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none!important;transition:all .15s;border:1px solid}
+.social-btn-gh{background:#161b22;border-color:#30363d;color:#e6edf3!important}
+.social-btn-gh:hover{background:#21262d;border-color:#6e7681}
+.social-btn-ig{background:#1a0a22;border-color:#833ab4;color:#f0a0d0!important}
+.social-btn-ig:hover{background:#280f32}
+.social-btn-wa{background:#0a1f0a;border-color:#25D366;color:#a8f0b8!important}
+.social-btn-wa:hover{background:#0d2a0d}
+.section-title-bar{font-family:var(--font-head);font-size:13px;color:var(--olive-bright);letter-spacing:2px;margin:20px 0 10px;border-bottom:1px solid var(--border-dark);padding-bottom:6px;text-transform:uppercase}
+
+/* SINGLE POST */
+.post-single{padding:20px 24px;max-width:680px}
+.post-single-header{border-bottom:1px solid var(--border-dark);padding-bottom:14px;margin-bottom:20px}
+.post-single-title{font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--text-white);text-transform:uppercase;line-height:1.1;margin-bottom:8px}
+.post-single-meta{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);display:flex;gap:12px;flex-wrap:wrap}
+.post-content h2{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--olive-bright);text-transform:uppercase;letter-spacing:.5px;margin:24px 0 10px;border-bottom:1px solid var(--border-dark);padding-bottom:6px}
+.post-content p{font-size:13px;line-height:1.75;color:var(--text-base);margin-bottom:14px}
+.post-content pre{background:#0d0e09;border:1px solid var(--border-dark);border-left:3px solid var(--olive-mid);border-radius:var(--radius);padding:14px 16px;overflow-x:auto;margin:14px 0;font-family:var(--font-mono);font-size:12px;line-height:1.6;position:relative}
+.post-content pre::before{content:'CODE';position:absolute;top:4px;right:8px;font-family:var(--font-head);font-size:8px;letter-spacing:1.5px;color:var(--border-light)}
+.post-content code{font-family:var(--font-mono);font-size:11px;background:rgba(154,170,64,.08);border:1px solid var(--border-dark);padding:1px 5px;border-radius:1px;color:var(--olive-bright)}
+.post-content pre code{background:none;border:none;padding:0;color:var(--text-base)}
+.post-content ul{margin:12px 0 14px 20px}
+.post-content li{font-size:13px;color:var(--text-base);line-height:1.65;margin-bottom:4px}
+.post-content li::marker{color:var(--olive-light)}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--darkest)}
+::-webkit-scrollbar-thumb{background:var(--border-mid);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--olive-mid)}
+</style>
+</head>
+<body>
+
+<!-- PREVIEW TAB SWITCHER -->
+<div class="preview-tabs">
+  <button class="tab-btn active" onclick="showTab('home')">HOME <span class="tab-badge">INDEX</span></button>
+  <button class="tab-btn" onclick="showTab('post')">POST <span class="tab-badge">SINGLE</span></button>
+  <button class="tab-btn" onclick="showTab('book')">BOOK <span class="tab-badge">PAGE</span></button>
+  <button class="tab-btn" onclick="showTab('about')">ABOUT <span class="tab-badge">PAGE</span></button>
+</div>
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page-view active" id="view-home">
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-top">
+      <a href="#" class="site-brand">
+        <div class="brand-logo">🖥</div>
+        <div class="brand-text-group">
+          <span class="brand-title">Anthony DevBlog</span>
+          <span class="brand-tagline">Low-level programming, C, systems &amp; more</span>
+        </div>
+      </a>
+      <div class="header-meta">Sun, 05 Apr 2026<br/>UFC — Universidade Federal do Ceará</div>
+    </div>
+    <nav class="site-nav">
+      <a href="#" class="active">NEWS</a>
+      <a href="#">BOOK</a>
+      <a href="#">ABOUT</a>
+      <a href="#">GITHUB</a>
+    </nav>
+  </header>
+  <div class="page-body">
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Content</div>
+        <div class="sidebar-block-body">
+          <ul>
+            <li><a href="#">All Posts</a></li>
+            <li><a href="#">C Programming</a></li>
+            <li><a href="#">Low-Level Dev</a></li>
+            <li><a href="#">Reverse Eng.</a></li>
+          </ul>
+          <br/>
+          <ul>
+            <li><a href="#">Tags Index</a></li>
+            <li><a href="#">Categories</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">My Book</div>
+        <div class="book-mini">
+          <div class="book-mini-cover">
+            <div class="book-mini-cover-title">Descompilando</div>
+            <div class="book-mini-cover-sub">Do código da máquina<br/>para o ser humano</div>
+          </div>
+          <div class="book-mini-body">
+            <p>C programming from the ground up — machine code to human-readable.</p>
+            <a href="#" class="btn-mini">⇒ View &amp; Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Tools &amp; Stack</div>
+        <div class="sidebar-block-body">
+          <ul>
+            <li>C / C++</li>
+            <li>x86 / x86-64 ASM</li>
+            <li>GCC / GDB / Make</li>
+            <li>Linux kernel</li>
+            <li>Ghidra / radare2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Connect</div>
+        <div class="social-links">
+          <a href="#" class="social-link"><span class="icon">🐱</span> GitHub</a>
+          <a href="#" class="social-link"><span class="icon">📸</span> Instagram</a>
+          <a href="#" class="social-link"><span class="icon">💬</span> WhatsApp</a>
+          <a href="#" class="social-link"><span class="icon">👤</span> About Me</a>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">About</div>
+        <div class="sidebar-block-body">
+          <ul>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">GitHub Profile</a></li>
+            <li><a href="#">Descompilando</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="section-header"><span class="section-header-label">▶ <strong>FEATURED</strong></span></div>
+      <div class="section-underline"></div>
+      <div class="hero-block">
+        <div class="hero-cover-placeholder">
+          <div class="hero-cover-inner">
+            <div class="hero-cover-icon">📖</div>
+            <div class="hero-cover-title-main">Descompilando</div>
+            <div class="hero-cover-title-sub">Do código da máquina<br/>para o ser humano</div>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="hero-eyebrow">New Book Available</div>
+          <h1 class="hero-title">Descompilando<br/><em style="font-size:60%;color:var(--text-muted);font-style:normal;">Do código da máquina para o ser humano</em></h1>
+          <p class="hero-desc">A deep dive into C programming, assembly, and systems — written in Portuguese for developers who want to truly understand what the machine is doing.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a href="#" class="btn-primary">📥 Get the Book</a>
+            <a href="#" class="btn-secondary">ℹ More Info</a>
+          </div>
+        </div>
+      </div>
+      <div class="section-header" style="margin-top:1px"><span class="section-header-label">▶ <strong>LATEST POSTS</strong></span></div>
+      <div class="section-underline"></div>
+      <div class="posts-list">
+        <article class="post-item">
+          <div class="post-meta">
+            <span>15 Jan 2025</span>
+            <span class="post-tag">C</span>
+            <span class="post-tag">ponteiros</span>
+          </div>
+          <h2><a href="#">Ponteiros em C: o que ninguém te conta</a></h2>
+          <p class="excerpt">Ponteiros são a fundação do C — mas a maioria dos tutoriais para no básico. Vamos ver o que realmente acontece na memória quando você declara um ponteiro, com GDB ao vivo.</p>
+          <a href="#" class="read-more">▶ Read More</a>
+        </article>
+        <article class="post-item">
+          <div class="post-meta">
+            <span>08 Jan 2025</span>
+            <span class="post-tag">assembly</span>
+            <span class="post-tag">stack</span>
+          </div>
+          <h2><a href="#">O que acontece na stack quando você chama uma função</a></h2>
+          <p class="excerpt">Toda chamada de função cria um stack frame. Vamos dissecar o que o processador faz passo a passo — com assembly gerado pelo GCC e GDB para ver a stack ao vivo.</p>
+          <a href="#" class="read-more">▶ Read More</a>
+        </article>
+        <article class="post-item">
+          <div class="post-meta">
+            <span>02 Jan 2025</span>
+            <span class="post-tag">C</span>
+            <span class="post-tag">compilação</span>
+          </div>
+          <h2><a href="#">O que o GCC faz com seu código antes de compilar</a></h2>
+          <p class="excerpt">Preprocessor, assembler, linker — a maioria dos devs trata a compilação como uma caixa preta. Vamos abrir essa caixa e ver cada etapa, passo a passo.</p>
+          <a href="#" class="read-more">▶ Read More</a>
+        </article>
+      </div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-copy">© 2026 Anthony — Built with Hugo ♥ | UFC — Universidade Federal do Ceará</div>
+    <div class="footer-links">
+      <a href="#">Home</a><a href="#">Posts</a><a href="#">Book</a><a href="#">About</a><a href="#">GitHub</a>
+    </div>
+  </footer>
+</div>
+</div>
+
+<!-- ============ SINGLE POST ============ -->
+<div class="page-view" id="view-post">
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-top">
+      <a href="#" class="site-brand">
+        <div class="brand-logo">🖥</div>
+        <div class="brand-text-group">
+          <span class="brand-title">Anthony DevBlog</span>
+          <span class="brand-tagline">Low-level programming, C, systems &amp; more</span>
+        </div>
+      </a>
+      <div class="header-meta">Sun, 05 Apr 2026<br/>UFC — Universidade Federal do Ceará</div>
+    </div>
+    <nav class="site-nav">
+      <a href="#">NEWS</a><a href="#">BOOK</a><a href="#">ABOUT</a><a href="#">GITHUB</a>
+    </nav>
+  </header>
+  <div class="page-body">
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Content</div>
+        <div class="sidebar-block-body"><ul><li><a href="#">All Posts</a></li><li><a href="#">C Programming</a></li><li><a href="#">Low-Level Dev</a></li><li><a href="#">Reverse Eng.</a></li></ul></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">My Book</div>
+        <div class="book-mini">
+          <div class="book-mini-cover">
+            <div class="book-mini-cover-title">Descompilando</div>
+            <div class="book-mini-cover-sub">Do código da máquina<br/>para o ser humano</div>
+          </div>
+          <div class="book-mini-body">
+            <p>C programming from the ground up.</p>
+            <a href="#" class="btn-mini">⇒ View &amp; Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Connect</div>
+        <div class="social-links">
+          <a href="#" class="social-link"><span class="icon">🐱</span> GitHub</a>
+          <a href="#" class="social-link"><span class="icon">📸</span> Instagram</a>
+          <a href="#" class="social-link"><span class="icon">💬</span> WhatsApp</a>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="section-header"><span class="section-header-label">▶ <strong>POST</strong></span></div>
+      <div class="section-underline"></div>
+      <article class="post-single">
+        <header class="post-single-header">
+          <h1 class="post-single-title">Ponteiros em C: o que ninguém te conta</h1>
+          <div class="post-single-meta">
+            <span>15 January 2025</span>
+            <span>~5 min read</span>
+            <span>Tags: <a href="#">C</a>, <a href="#">ponteiros</a>, <a href="#">memória</a></span>
+          </div>
+        </header>
+        <div class="post-content">
+          <h2>O que é um ponteiro, de verdade?</h2>
+          <p>Todo mundo aprende a definição: <em>"um ponteiro é uma variável que guarda um endereço de memória."</em> Correto. Mas o que isso significa na prática?</p>
+          <p>Quando você escreve:</p>
+          <pre><code>int x = 42;
+int *ptr = &x;</code></pre>
+          <p><code>ptr</code> não é mágico. É um número inteiro de 8 bytes que contém um endereço — a localização de <code>x</code> na RAM.</p>
+          <h2>Vendo na prática com GDB</h2>
+          <p>Compile com símbolos de debug e inspecione diretamente na memória:</p>
+          <pre><code>gcc -g -o exemplo exemplo.c
+gdb ./exemplo
+(gdb) break main
+(gdb) run
+(gdb) x/xw &x
+0x7fffffffe59c: 0x0000002a</code></pre>
+          <p>O valor <code>0x0000002a</code> é 42 em hexadecimal. Você está lendo a RAM diretamente.</p>
+          <h2>Aritmética de ponteiros</h2>
+          <p>Quando você faz <code>p + 1</code>, o compilador avança o endereço em <code>sizeof(*p)</code> bytes — no caso de <code>int</code>, 4 bytes. Não 1 byte.</p>
+          <pre><code>int arr[] = {10, 20, 30, 40};
+int *p = arr;
+printf("%d\n", *(p + 2)); // 30</code></pre>
+        </div>
+        <footer style="margin-top:28px;padding-top:14px;border-top:1px solid var(--border-dark);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <a href="#" class="btn-secondary" style="font-size:9px;">◄ Previous Post</a>
+            <a href="#" class="btn-secondary" style="font-size:9px;">≡ All Posts</a>
+            <a href="#" class="btn-secondary" style="font-size:9px;">Next Post ►</a>
+          </div>
+        </footer>
+      </article>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-copy">© 2026 Anthony — Built with Hugo ♥</div>
+    <div class="footer-links"><a href="#">Home</a><a href="#">Posts</a><a href="#">Book</a><a href="#">About</a></div>
+  </footer>
+</div>
+</div>
+
+<!-- ============ BOOK PAGE ============ -->
+<div class="page-view" id="view-book">
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-top">
+      <a href="#" class="site-brand">
+        <div class="brand-logo">🖥</div>
+        <div class="brand-text-group">
+          <span class="brand-title">Anthony DevBlog</span>
+          <span class="brand-tagline">Low-level programming, C, systems &amp; more</span>
+        </div>
+      </a>
+      <div class="header-meta">Sun, 05 Apr 2026<br/>UFC — Universidade Federal do Ceará</div>
+    </div>
+    <nav class="site-nav">
+      <a href="#">NEWS</a><a href="#" class="active">BOOK</a><a href="#">ABOUT</a><a href="#">GITHUB</a>
+    </nav>
+  </header>
+  <div class="page-body">
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Content</div>
+        <div class="sidebar-block-body"><ul><li><a href="#">All Posts</a></li><li><a href="#">C Programming</a></li><li><a href="#">Reverse Eng.</a></li></ul></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Connect</div>
+        <div class="social-links">
+          <a href="#" class="social-link"><span class="icon">🐱</span> GitHub</a>
+          <a href="#" class="social-link"><span class="icon">📸</span> Instagram</a>
+          <a href="#" class="social-link"><span class="icon">💬</span> WhatsApp</a>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="section-header"><span class="section-header-label">▶ <strong>THE BOOK</strong></span></div>
+      <div class="section-underline"></div>
+      <div class="book-page">
+        <div class="book-showcase">
+          <div class="book-cover-large">
+            <div class="book-cover-icon-large">📖</div>
+            <div class="book-cover-title-large">Descompilando</div>
+            <div class="book-cover-subtitle-large">Do código da máquina<br/>para o ser humano</div>
+            <div class="book-author-badge">Anthony — UFC/CE</div>
+          </div>
+          <div class="book-info">
+            <h1 class="book-info-title">Descompilando</h1>
+            <p class="book-info-subtitle">Do código da máquina para o ser humano</p>
+            <p class="book-info-desc">Um guia completo de programação em C e sistemas de baixo nível, escrito em português para desenvolvedores que querem entender o que a máquina realmente faz — do código C ao binário, e de volta.</p>
+            <div class="book-stat-row">
+              <div class="book-stat"><strong>PT-BR</strong><span>language</span></div>
+              <div class="book-stat"><strong>Free</strong><span>license</span></div>
+              <div class="book-stat"><strong>PDF+EPUB</strong><span>formats</span></div>
+              <div class="book-stat"><strong>WIP</strong><span>status</span></div>
+            </div>
+            <hr class="divider"/>
+            <div class="download-group">
+              <a href="#" class="btn-download">📥 Download PDF</a>
+              <a href="#" class="btn-download">📓 Download EPUB</a>
+              <a href="#" class="btn-secondary">📂 Source on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="post-content">
+          <h2>Sobre o Livro</h2>
+          <p><strong>Descompilando</strong> nasceu da vontade de criar um recurso em português que realmente explique o que acontece por baixo do capô — desde a sintaxe C até o código de máquina que o processador executa.</p>
+          <h2>O que você vai aprender</h2>
+          <ul>
+            <li>Fundamentos de C — ponteiros, memória, structs, unions e o modelo de memória real</li>
+            <li>Assembly x86/x86-64 — leitura e escrita de código de montagem, convenções de chamada</li>
+            <li>Compilação e linkagem — o que GCC faz com seu código, ELF binários, seções</li>
+            <li>Debugging profundo — GDB, análise de stack frames, detecção de memory leaks</li>
+            <li>Engenharia reversa básica — Ghidra, radare2, identificando padrões em binários</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-copy">© 2026 Anthony — Built with Hugo ♥</div>
+    <div class="footer-links"><a href="#">Home</a><a href="#">Posts</a><a href="#">Book</a><a href="#">About</a></div>
+  </footer>
+</div>
+</div>
+
+<!-- ============ ABOUT PAGE ============ -->
+<div class="page-view" id="view-about">
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-top">
+      <a href="#" class="site-brand">
+        <div class="brand-logo">🖥</div>
+        <div class="brand-text-group">
+          <span class="brand-title">Anthony DevBlog</span>
+          <span class="brand-tagline">Low-level programming, C, systems &amp; more</span>
+        </div>
+      </a>
+      <div class="header-meta">Sun, 05 Apr 2026<br/>UFC — Universidade Federal do Ceará</div>
+    </div>
+    <nav class="site-nav">
+      <a href="#">NEWS</a><a href="#">BOOK</a><a href="#" class="active">ABOUT</a><a href="#">GITHUB</a>
+    </nav>
+  </header>
+  <div class="page-body">
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Content</div>
+        <div class="sidebar-block-body"><ul><li><a href="#">All Posts</a></li><li><a href="#">C Programming</a></li><li><a href="#">Reverse Eng.</a></li></ul></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">My Book</div>
+        <div class="book-mini">
+          <div class="book-mini-cover">
+            <div class="book-mini-cover-title">Descompilando</div>
+            <div class="book-mini-cover-sub">Do código da máquina<br/>para o ser humano</div>
+          </div>
+          <div class="book-mini-body">
+            <p>C programming from the ground up.</p>
+            <a href="#" class="btn-mini">⇒ View &amp; Download</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="section-header"><span class="section-header-label">▶ <strong>ABOUT ME</strong></span></div>
+      <div class="section-underline"></div>
+      <div class="about-page">
+        <div class="about-header">
+          <div class="about-avatar">🧑‍💻</div>
+          <div>
+            <div class="about-name">Anthony</div>
+            <div class="about-role">Systems Developer &amp; Author · UFC — Universidade Federal do Ceará</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <p>I'm a Computer Science student at <strong>UFC — Universidade Federal do Ceará</strong>, based in Fortaleza, Brazil. I'm obsessed with understanding how computers <em>really</em> work — not just writing code that runs, but knowing why it runs and what the machine is doing.</p>
+          <p>My main interests are low-level programming in C and assembly, reverse engineering, systems programming, and writing technical content in Portuguese.</p>
+        </div>
+        <div class="section-title-bar">Academics</div>
+        <div class="academic-card">
+          <div class="academic-card-title">Computer Science — Ciência da Computação</div>
+          <div class="academic-card-inst">UFC — Universidade Federal do Ceará &mdash; 2022 – present</div>
+          <p>Fortaleza, CE, Brazil. Focus on systems programming, compilers, and low-level software.</p>
+        </div>
+        <div class="section-title-bar">Skills &amp; Stack</div>
+        <div class="skills-grid">
+          <div class="skill-tag">C / C++</div>
+          <div class="skill-tag">x86-64 ASM</div>
+          <div class="skill-tag">GDB / GCC</div>
+          <div class="skill-tag">Makefiles</div>
+          <div class="skill-tag">Linux Kernel</div>
+          <div class="skill-tag">ELF Binaries</div>
+          <div class="skill-tag">Ghidra</div>
+          <div class="skill-tag">radare2</div>
+          <div class="skill-tag">Git / GitHub</div>
+          <div class="skill-tag">Hugo</div>
+          <div class="skill-tag">Bash/Shell</div>
+          <div class="skill-tag">Python</div>
+        </div>
+        <div class="section-title-bar">Find Me Online</div>
+        <div class="social-buttons">
+          <a href="#" class="social-btn social-btn-gh">🐱 GitHub</a>
+          <a href="#" class="social-btn social-btn-ig">📸 Instagram</a>
+          <a href="#" class="social-btn social-btn-wa">💬 WhatsApp</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-copy">© 2026 Anthony — Built with Hugo ♥</div>
+    <div class="footer-links"><a href="#">Home</a><a href="#">Posts</a><a href="#">Book</a><a href="#">About</a></div>
+  </footer>
+</div>
+</div>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

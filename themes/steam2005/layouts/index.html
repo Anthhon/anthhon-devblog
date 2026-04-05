@@ -1,0 +1,72 @@
+{{ define "main" }}
+
+<!-- ===== BOOK SPOTLIGHT (hero) ===== -->
+<div class="section-header">
+  <span class="section-header-label">&#x25BA; <strong>FEATURED</strong></span>
+</div>
+<div class="section-underline"></div>
+
+<div class="hero-block">
+  <!-- Book cover placeholder -->
+  <div class="hero-cover-placeholder">
+    <div class="hero-cover-inner">
+      <div class="hero-cover-icon">&#x1F4D6;</div>
+      <div class="hero-cover-title-main">Descompilando</div>
+      <div class="hero-cover-title-sub">Do código da máquina<br/>para o ser humano</div>
+    </div>
+  </div>
+
+  <!-- Book text -->
+  <div class="hero-text">
+    <div class="hero-eyebrow">New Book Available</div>
+    <h1 class="hero-title">
+      Descompilando<br />
+      <em style="font-size:60%; color: var(--text-muted); font-style:normal;">
+        Do código da máquina para o ser humano
+      </em>
+    </h1>
+    <p class="hero-desc">
+      A deep dive into C programming, assembly, and systems — written in Portuguese for
+      developers who want to truly understand what the machine is doing.
+    </p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="{{ "/book/" | relURL }}" class="btn-primary">&#x1F4E5; Get the Book</a>
+      <a href="{{ "/book/" | relURL }}" class="btn-secondary">&#x2139; More Info</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LATEST POSTS ===== -->
+<div class="section-header" style="margin-top: 1px;">
+  <span class="section-header-label">&#x25BA; <strong>LATEST POSTS</strong></span>
+</div>
+<div class="section-underline"></div>
+
+<div class="posts-list">
+  {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+  {{ range $paginator.Pages }}
+  <article class="post-item">
+    <div class="post-meta">
+      <span>{{ .Date.Format "02 Jan 2006" }}</span>
+      {{ with .Params.tags }}
+        {{ range first 2 . }}
+          <span class="post-tag">{{ . }}</span>
+        {{ end }}
+      {{ end }}
+    </div>
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <p class="excerpt">
+      {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 180 "..." }}{{ end }}
+    </p>
+    <a href="{{ .Permalink }}" class="read-more">&#x25BA; Read More</a>
+  </article>
+  {{ else }}
+  <div class="post-item" style="color: var(--text-dim); font-style: italic; font-size:12px;">
+    No posts yet — check back soon!
+  </div>
+  {{ end }}
+</div>
+
+{{ template "_internal/pagination.html" . }}
+
+{{ end }}

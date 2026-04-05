@@ -1,0 +1,40 @@
+baseURL = "https://anthonydevblog.github.io/"
+languageCode = "en-us"
+title = "Anthony DevBlog"
+theme = "steam2005"
+paginate = 5
+
+[params]
+  description = "Programação Low-Level, Desenvolvimento de Sistemas e mais..."
+  author = "Anthony"
+  tagline = "Low-level programming tutorials, systems dev & C book"
+  university = "UFC — Universidade Federal do Ceará"
+  github = "https://github.com/Anthhon"
+  instagram = "https://instagram.com/anthhon.c"
+  whatsapp = "https://wa.me/5588993592881"
+
+[menu]
+  [[menu.main]]
+    name = "NOTÍCIAS"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "LIVRO"
+    url = "/book/"
+    weight = 2
+  [[menu.main]]
+    name = "SOBRE MIM"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "GITHUB"
+    url = "https://github.com/Anthhon"
+    weight = 4
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+  [markup.goldmark.renderer]
+    unsafe = true

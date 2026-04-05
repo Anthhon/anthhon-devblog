@@ -1,0 +1,80 @@
+<!-- ===== SIDEBAR PARTIAL ===== -->
+
+<!-- NAV BLOCK: Content -->
+<div class="sidebar-block">
+  <div class="sidebar-block-title">Content</div>
+  <div class="sidebar-block-body">
+    <ul>
+      <li><a href="{{ "/posts/" | relURL }}">All Posts</a></li>
+      <li><a href="{{ "/posts/c-programming/" | relURL }}">C Programming</a></li>
+      <li><a href="{{ "/posts/low-level/" | relURL }}">Low-Level Dev</a></li>
+      <li><a href="{{ "/posts/reverse-engineering/" | relURL }}">Reverse Eng.</a></li>
+    </ul>
+    <br />
+    <p style="font-size:10px; color: var(--text-dim);">Browse all topics:</p>
+    <ul>
+      <li><a href="{{ "/tags/" | relURL }}">Tags Index</a></li>
+      <li><a href="{{ "/categories/" | relURL }}">Categories</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOOK BLOCK -->
+<div class="sidebar-block">
+  <div class="sidebar-block-title">My Book</div>
+  <div class="book-mini">
+    <div class="book-mini-cover">
+      <div class="book-mini-cover-title">Descompilando</div>
+      <div class="book-mini-cover-sub">Do código da máquina<br/>para o ser humano</div>
+    </div>
+    <div class="book-mini-body">
+      <p>C programming from the ground up — machine code to human-readable.</p>
+      <a href="{{ "/book/" | relURL }}" class="btn-mini">&#x21E2; View &amp; Download</a>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCE / TOOLS BLOCK -->
+<div class="sidebar-block">
+  <div class="sidebar-block-title">Tools &amp; Stack</div>
+  <div class="sidebar-block-body">
+    <ul>
+      <li>C / C++</li>
+      <li>x86 / x86-64 ASM</li>
+      <li>GCC / GDB / Make</li>
+      <li>Linux kernel</li>
+      <li>Ghidra / radare2</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SOCIAL LINKS -->
+<div class="sidebar-block">
+  <div class="sidebar-block-title">Connect</div>
+  <div class="social-links">
+    <a href="{{ .Site.Params.github }}" class="social-link" target="_blank" rel="noopener">
+      <span class="icon">&#x1F431;</span> GitHub
+    </a>
+    <a href="{{ .Site.Params.instagram }}" class="social-link" target="_blank" rel="noopener">
+      <span class="icon">&#x1F4F8;</span> Instagram
+    </a>
+    <a href="{{ .Site.Params.whatsapp }}" class="social-link" target="_blank" rel="noopener">
+      <span class="icon">&#x1F4AC;</span> WhatsApp
+    </a>
+    <a href="{{ "/about/" | relURL }}" class="social-link">
+      <span class="icon">&#x1F464;</span> About Me
+    </a>
+  </div>
+</div>
+
+<!-- ABOUT MINI -->
+<div class="sidebar-block">
+  <div class="sidebar-block-title">About</div>
+  <div class="sidebar-block-body">
+    <ul>
+      <li><a href="{{ "/about/" | relURL }}">About Me</a></li>
+      <li><a href="{{ .Site.Params.github }}">GitHub Profile</a></li>
+      <li><a href="{{ "/book/" | relURL }}">Descompilando</a></li>
+    </ul>
+  </div>
+</div>

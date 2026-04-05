@@ -1,0 +1,73 @@
+{{ define "main" }}
+
+<div class="section-header">
+  <span class="section-header-label">&#x25BA; <strong>ABOUT ME</strong></span>
+</div>
+<div class="section-underline"></div>
+
+<div class="about-page">
+
+  <!-- HEADER -->
+  <div class="about-header">
+    <div class="about-avatar">&#x1F9D1;&#x200D;&#x1F4BB;</div>
+    <div>
+      <div class="about-name">{{ .Site.Params.author }}</div>
+      <div class="about-role">Systems Developer &amp; Author &bull; {{ .Site.Params.university }}</div>
+    </div>
+  </div>
+
+  <!-- BODY CONTENT from markdown -->
+  <div class="about-content post-content">
+    {{ .Content }}
+  </div>
+
+  <!-- ACADEMICS SECTION (rendered from front matter or markdown) -->
+  {{ with .Params.academics }}
+  <h2 class="bold-upper" style="font-family: var(--font-head); font-size: 13px; color: var(--olive-bright); letter-spacing: 2px; margin: 20px 0 10px; border-bottom: 1px solid var(--border-dark); padding-bottom: 6px;">
+    Academics
+  </h2>
+  {{ range . }}
+  <div class="academic-card">
+    <div class="academic-card-title">{{ .degree }}</div>
+    <div class="academic-card-inst">{{ .institution }} &mdash; {{ .period }}</div>
+    {{ with .description }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <!-- SKILLS -->
+  {{ with .Params.skills }}
+  <h2 class="bold-upper" style="font-family: var(--font-head); font-size: 13px; color: var(--olive-bright); letter-spacing: 2px; margin: 20px 0 10px; border-bottom: 1px solid var(--border-dark); padding-bottom: 6px;">
+    Skills &amp; Stack
+  </h2>
+  <div class="skills-grid">
+    {{ range . }}
+    <div class="skill-tag">{{ . }}</div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- SOCIAL BUTTONS -->
+  <h2 class="bold-upper" style="font-family: var(--font-head); font-size: 13px; color: var(--olive-bright); letter-spacing: 2px; margin: 20px 0 10px; border-bottom: 1px solid var(--border-dark); padding-bottom: 6px;">
+    Find Me Online
+  </h2>
+  <div class="social-buttons">
+    {{ with .Site.Params.github }}
+    <a href="{{ . }}" class="social-btn social-btn-gh" target="_blank" rel="noopener">
+      &#x1F431; GitHub
+    </a>
+    {{ end }}
+    {{ with .Site.Params.instagram }}
+    <a href="{{ . }}" class="social-btn social-btn-ig" target="_blank" rel="noopener">
+      &#x1F4F8; Instagram
+    </a>
+    {{ end }}
+    {{ with .Site.Params.whatsapp }}
+    <a href="{{ . }}" class="social-btn social-btn-wa" target="_blank" rel="noopener">
+      &#x1F4AC; WhatsApp
+    </a>
+    {{ end }}
+  </div>
+
+</div><!-- .about-page -->
+{{ end }}

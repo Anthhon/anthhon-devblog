@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+
+  {{ hugo.Generator }}
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="{{ "/" | relURL }}" class="site-brand">
+        <div class="brand-logo">&#x1F5A5;</div>
+        <div class="brand-text-group">
+          <span class="brand-title">{{ .Site.Title }}</span>
+          <span class="brand-tagline">{{ .Site.Params.tagline }}</span>
+        </div>
+      </a>
+      <div class="header-meta">
+        {{ now.Format "Mon, 02 Jan 2006" }}<br />
+        {{ .Site.Params.university }}
+      </div>
+    </div>
+    <nav class="site-nav">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}"
+         class="{{ if (or ($.IsHome) (strings.HasPrefix $.RelPermalink .URL)) }}active{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </nav>
+  </header>
+
+  <!-- ===== PAGE BODY ===== -->
+  <div class="page-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      {{ partial "sidebar.html" . }}
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+  </div><!-- .page-body -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-copy">
+      &copy; {{ now.Format "2006" }} {{ .Site.Params.author }} &mdash; Built with Hugo &amp; ♥<br />
+      All original content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+    <div class="footer-links">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <a href="{{ "/posts/" | relURL }}">Posts</a>
+      <a href="{{ "/book/" | relURL }}">Book</a>
+      <a href="{{ "/about/" | relURL }}">About</a>
+      <a href="{{ .Site.Params.github }}">GitHub</a>
+    </div>
+  </footer>
+
+</div><!-- .site-wrapper -->
+
+</body>
+</html>
