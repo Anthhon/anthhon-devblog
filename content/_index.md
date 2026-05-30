@@ -1,4 +1,4 @@
 ---
-title: "Anthony DevBlog"
-description: "Low-level programming, C, systems dev & more — by Anthony, UFC/CE"
+title: "anthony.log"
+description: "Programação em baixo nível, desenvolvimento de sistemas e livro de fundamentos sobre C."
 ---

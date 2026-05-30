@@ -1,11 +1,8 @@
-/* ============================================================
-   STEAM 2005 AESTHETIC — Anthony DevBlog
-   Olive green / black / dark portal vibe
-   ============================================================ */
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-
-/* ---- CSS VARIABLES ---- */
+/* VARIABLES */
 :root {
   --black:        #0a0a08;
   --darkest:      #111109;
@@ -39,8 +36,8 @@
   --link:         #a8b850;
   --link-hover:   #c8d860;
 
-  --font-head:    'Oswald', 'Arial Narrow', sans-serif;
-  --font-body:    'PT Serif', Georgia, serif;
+  --font-head:    'Iosevka Charon Mono', monospace;
+  --font-body:    'DM Mono', monospace;
   --font-mono:    'Source Code Pro', 'Courier New', monospace;
 
   --radius:       2px;
@@ -48,9 +45,10 @@
   --shadow-heavy: 0 4px 16px rgba(0,0,0,0.9);
 }
 
-/* ---- RESET & BASE ---- */
+/* RESET & BASE */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* CSS */
 html { font-size: 13px; scroll-behavior: smooth; }
 
 body {
@@ -66,7 +64,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
 
-/* ---- OUTER WRAPPER ---- */
+/* OUTER WRAPPER */
 .site-wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -155,12 +153,12 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
 }
 
-/* ---- NAV BAR ---- */
+/* NAV BAR */
 .site-nav {
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
   display: flex;
-  padding: 0 8px;
+  padding: 0;
 }
 
 .site-nav a {
@@ -197,7 +195,7 @@ img { max-width: 100%; display: block; }
   min-height: calc(100vh - 200px);
 }
 
-/* ---- SIDEBAR ---- */
+/* SIDEBAR */
 .sidebar {
   background: var(--panel-bg);
   border-right: 1px solid var(--border-dark);
@@ -380,7 +378,7 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
-/* ---- MAIN CONTENT AREA ---- */
+/* MAIN CONTENT AREA */
 .main-content {
   background: var(--dark);
   padding: 0;
@@ -826,11 +824,14 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   padding: 14px 16px;
   overflow-x: auto;
-  margin: 14px 0;
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.6;
   position: relative;
+}
+
+.post-content .highlight {
+    margin: 2vh 0;
 }
 
 .post-content pre::before {
@@ -859,6 +860,54 @@ img { max-width: 100%; display: block; }
   border: none;
   padding: 0;
   color: var(--text-base);
+}
+/*FIX: Hard-coded solution to different code-box and line-count box in posts*/
+.post-content pre code span {
+    margin-bottom: 0.073em;
+}
+
+/* Chroma highlighter — line number table alignment */
+.post-content .chroma {
+  overflow-x: auto;
+}
+.post-content .chroma table {
+  margin: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.post-content .chroma .lntd {
+  padding: 0;
+  vertical-align: top;
+  line-height: inherit;
+}
+.post-content .chroma .lntd:first-child {
+  padding-right: 8px;
+  border-right: 1px solid var(--border-dark);
+}
+.post-content .chroma .lntd:first-child pre {
+  margin: 0;
+  padding: 14px 0;
+  background: none;
+  border: none;
+}
+.post-content .chroma .lntd:last-child pre {
+  margin: 0;
+  padding: 14px 16px;
+}
+.post-content .chroma .lntd:last-child code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-base);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.post-content .chroma .lntd pre code {
+  display: block;
+}
+.post-content .chroma .hl {
+  background: rgba(154,170,64,0.06);
+  display: block;
 }
 
 .post-content blockquote {

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on anthhon.log</title>
+    <link>https://anthonydevblog.github.io/tags/c/</link>
+    <description>Recent content in C on anthhon.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://anthonydevblog.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diferenças entre o Heap e o Stack</title>
+      <link>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</guid>
+      <description>Segmentação de Memória Quando compilamos um código, o binário gerado utiliza cinco segmentos diferentes da memória do computador, segmentos esses chamados de: text, data, bss, heap e stack.
+Todos esses segmentos tem sua devida importância e utilidade, portanto, nesse material vamos tentar elaborar um pouco sobre o funcionamento de cada um deles.
+Entender bem o funcionamento desses setores da memória acaba sendo benéfico a qualquer programador que vá lidar com linguagens de baixo nível, que exigem maior compreensão do comportamento e da manipulação da memória.</description>
+    </item>
+    
+    <item>
+      <title>Ponteiros em C: o que ninguém te conta</title>
+      <link>https://anthonydevblog.github.io/posts/ponteiros-em-c/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/ponteiros-em-c/</guid>
+      <description>O que é um ponteiro, de verdade? Todo mundo aprende a definição: &amp;ldquo;um ponteiro é uma variável que guarda um endereço de memória.&amp;rdquo; Correto. Mas o que isso significa na prática?
+Quando você escreve:
+1 2 int x = 42; int *ptr = &amp;amp;x; ptr não é mágico. É um número inteiro. Na maioria das arquiteturas 64-bit modernas, é um inteiro de 8 bytes que contém um endereço — a localização de x na RAM.</description>
+    </item>
+    
+    <item>
+      <title>GDB - Conceitos básicos</title>
+      <link>https://anthonydevblog.github.io/posts/using-gdb/</link>
+      <pubDate>Sat, 15 Apr 2023 19:32:37 -0300</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/using-gdb/</guid>
+      <description>Como debugar código C usando GDB O GNU Debugger (também conhecido como GDB) é um depurador que permite ao usuário ver &amp;ldquo;o que está acontecendo&amp;rdquo; dentro de um programa enquanto ele é executado.
+GDB pode ser usado para depurar programas escritos em C, C++, Fortran e Modula-2.
+Código de exemplo 1 2 3 4 5 6 7 8 9 10 11 12 13 #include &amp;lt;stdio.h&amp;gt; int main() { int i, num, j; printf(&amp;#34;Digite um número: &amp;#34;); scanf(&amp;#34;%d&amp;#34;, &amp;amp;num); for (i = 1; i &amp;lt; num; i++) j = j * i; printf(&amp;#34;%d!</description>
+    </item>
+    
+  </channel>
+</rss>

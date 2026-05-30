@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ponteiros on anthhon.log</title>
+    <link>https://anthonydevblog.github.io/tags/ponteiros/</link>
+    <description>Recent content in ponteiros on anthhon.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://anthonydevblog.github.io/tags/ponteiros/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ponteiros em C: o que ninguém te conta</title>
+      <link>https://anthonydevblog.github.io/posts/ponteiros-em-c/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/ponteiros-em-c/</guid>
+      <description>O que é um ponteiro, de verdade? Todo mundo aprende a definição: &amp;ldquo;um ponteiro é uma variável que guarda um endereço de memória.&amp;rdquo; Correto. Mas o que isso significa na prática?
+Quando você escreve:
+1 2 int x = 42; int *ptr = &amp;amp;x; ptr não é mágico. É um número inteiro. Na maioria das arquiteturas 64-bit modernas, é um inteiro de 8 bytes que contém um endereço — a localização de x na RAM.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,6 @@
 <div class="section-header">
   <span class="section-header-label">&#x25BA; <strong>LIVRO</strong></span>
 </div>
-<div class="section-underline"></div>
 
 <div class="book-page">
 
@@ -49,7 +48,7 @@
         {{ with .Params.pdf_url }}
         <a href="{{ . }}" class="btn-download" download>&#x1F4E5; Baixe o PDF</a>
         {{ else }}
-        <a href="#" class="btn-download" style="opacity:0.5; cursor:not-allowed;">&#x1F4E5; PDF (coming soon)</a>
+        <a href="#" class="btn-download" style="opacity:0.5; cursor:not-allowed;">PDF (coming soon)</a>
         {{ end }}
 
         {{ with .Params.epub_url }}

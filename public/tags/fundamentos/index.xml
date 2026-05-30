@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fundamentos on anthhon.log</title>
+    <link>https://anthonydevblog.github.io/tags/fundamentos/</link>
+    <description>Recent content in fundamentos on anthhon.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://anthonydevblog.github.io/tags/fundamentos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diferenças entre o Heap e o Stack</title>
+      <link>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</guid>
+      <description>Segmentação de Memória Quando compilamos um código, o binário gerado utiliza cinco segmentos diferentes da memória do computador, segmentos esses chamados de: text, data, bss, heap e stack.
+Todos esses segmentos tem sua devida importância e utilidade, portanto, nesse material vamos tentar elaborar um pouco sobre o funcionamento de cada um deles.
+Entender bem o funcionamento desses setores da memória acaba sendo benéfico a qualquer programador que vá lidar com linguagens de baixo nível, que exigem maior compreensão do comportamento e da manipulação da memória.</description>
+    </item>
+    
+  </channel>
+</rss>

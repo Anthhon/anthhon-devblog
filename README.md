@@ -1,4 +1,4 @@
-# Anthony DevBlog
+# anthony.log
 
 A Hugo-powered developer blog & portfolio with a **Steam 2005** dark-portal aesthetic.
 Olive green + black, dense sidebar layout, monospace code, retro early-web vibe.

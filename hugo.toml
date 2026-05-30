@@ -1,6 +1,6 @@
 baseURL = "https://anthonydevblog.github.io/"
-languageCode = "en-us"
-title = "Anthony DevBlog"
+languageCode = "pt-br"
+title = "anthhon.log"
 theme = "steam2005"
 paginate = 5
 
@@ -15,7 +15,7 @@ paginate = 5
 
 [menu]
   [[menu.main]]
-    name = "NOTÍCIAS"
+    name = "Postagens"
     url = "/posts/"
     weight = 1
   [[menu.main]]

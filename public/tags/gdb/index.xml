@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GDB on anthhon.log</title>
+    <link>https://anthonydevblog.github.io/tags/gdb/</link>
+    <description>Recent content in GDB on anthhon.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Apr 2023 19:32:37 -0300</lastBuildDate><atom:link href="https://anthonydevblog.github.io/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GDB - Conceitos básicos</title>
+      <link>https://anthonydevblog.github.io/posts/using-gdb/</link>
+      <pubDate>Sat, 15 Apr 2023 19:32:37 -0300</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/using-gdb/</guid>
+      <description>Como debugar código C usando GDB O GNU Debugger (também conhecido como GDB) é um depurador que permite ao usuário ver &amp;ldquo;o que está acontecendo&amp;rdquo; dentro de um programa enquanto ele é executado.
+GDB pode ser usado para depurar programas escritos em C, C++, Fortran e Modula-2.
+Código de exemplo 1 2 3 4 5 6 7 8 9 10 11 12 13 #include &amp;lt;stdio.h&amp;gt; int main() { int i, num, j; printf(&amp;#34;Digite um número: &amp;#34;); scanf(&amp;#34;%d&amp;#34;, &amp;amp;num); for (i = 1; i &amp;lt; num; i++) j = j * i; printf(&amp;#34;%d!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anthony.log on anthhon.log</title>
+    <link>https://anthonydevblog.github.io/</link>
+    <description>Recent content in anthony.log on anthhon.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://anthonydevblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diferenças entre o Heap e o Stack</title>
+      <link>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/how-heap-and-stack-works/</guid>
+      <description>Segmentação de Memória Quando compilamos um código, o binário gerado utiliza cinco segmentos diferentes da memória do computador, segmentos esses chamados de: text, data, bss, heap e stack.
+Todos esses segmentos tem sua devida importância e utilidade, portanto, nesse material vamos tentar elaborar um pouco sobre o funcionamento de cada um deles.
+Entender bem o funcionamento desses setores da memória acaba sendo benéfico a qualquer programador que vá lidar com linguagens de baixo nível, que exigem maior compreensão do comportamento e da manipulação da memória.</description>
+    </item>
+    
+    <item>
+      <title>Ponteiros em C: o que ninguém te conta</title>
+      <link>https://anthonydevblog.github.io/posts/ponteiros-em-c/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/ponteiros-em-c/</guid>
+      <description>O que é um ponteiro, de verdade? Todo mundo aprende a definição: &amp;ldquo;um ponteiro é uma variável que guarda um endereço de memória.&amp;rdquo; Correto. Mas o que isso significa na prática?
+Quando você escreve:
+1 2 int x = 42; int *ptr = &amp;amp;x; ptr não é mágico. É um número inteiro. Na maioria das arquiteturas 64-bit modernas, é um inteiro de 8 bytes que contém um endereço — a localização de x na RAM.</description>
+    </item>
+    
+    <item>
+      <title>GDB - Conceitos básicos</title>
+      <link>https://anthonydevblog.github.io/posts/using-gdb/</link>
+      <pubDate>Sat, 15 Apr 2023 19:32:37 -0300</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/posts/using-gdb/</guid>
+      <description>Como debugar código C usando GDB O GNU Debugger (também conhecido como GDB) é um depurador que permite ao usuário ver &amp;ldquo;o que está acontecendo&amp;rdquo; dentro de um programa enquanto ele é executado.
+GDB pode ser usado para depurar programas escritos em C, C++, Fortran e Modula-2.
+Código de exemplo 1 2 3 4 5 6 7 8 9 10 11 12 13 #include &amp;lt;stdio.h&amp;gt; int main() { int i, num, j; printf(&amp;#34;Digite um número: &amp;#34;); scanf(&amp;#34;%d&amp;#34;, &amp;amp;num); for (i = 1; i &amp;lt; num; i++) j = j * i; printf(&amp;#34;%d!</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://anthonydevblog.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/about/</guid>
+      <description>Oi, meu nome é Anthony Sou um estudante de Engenharia da Computação pela UFC (Universidade Federal do Ceará), no campus Mucambinho de Sobral/CE.
+Desde muito novo acabei por ter bastante contato com computadores e acabei crescendo como um entusiasta da área de computação no geral. Com a descoberta da área da computação aos 17 anos, notei que era possível fazer uma carreira na área e desde então faço minha parte para construir meu futuro nessa área que tanto gosto.</description>
+    </item>
+    
+    <item>
+      <title>Descompilando</title>
+      <link>https://anthonydevblog.github.io/book/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://anthonydevblog.github.io/book/</guid>
+      <description>Sobre o Livro Descompilando nasceu da vontade de criar um recurso em português que realmente explique o que acontece por baixo do capô — desde a sintaxe C até o código de máquina que o processador executa.
+O que você vai aprender Fundamentos de C — ponteiros, memória, structs, unions e o modelo de memória real Assembly x86/x86-64 — leitura e escrita de código de montagem, convenções de chamada Compilação e linkagem — o que GCC faz com seu código, ELF binários, seções Debugging profundo — GDB, análise de stack frames, detecção de memory leaks Engenharia reversa básica — Ghidra, radare2, identificando padrões em binários Para quem é Programadores que sabem C mas nunca entenderam o porquê das coisas Estudantes de ciência da computação que querem ir além do livro texto Qualquer pessoa curiosa sobre como computadores realmente funcionam Status O livro está atualmente em desenvolvimento.</description>
+    </item>
+    
+  </channel>
+</rss>
