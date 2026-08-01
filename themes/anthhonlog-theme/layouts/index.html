@@ -1,7 +1,59 @@
 {{ define "main" }}
-<h1>anthhon.log</h1>
+<div class="main-group">
+    <div class="menu">
+        <h1 class="menu-title">anthhon.log<span>_</span></h1>
+        <nav class="menu-options">
+            <a class="menu-option" href="/posts">Postagens</a>
+            <a class="menu-option" href="/">Descompilando</a>
+            <a class="menu-option" href="/posts/about-me">Sobre mim</a>
+        </nav>
+    </div>
 
-<p>Postagens</p>
-<p>Descompilando</p>
-<p>Sobre mim</p>
+    <div class="main-bar"></div>
+
+    <div class="sections">
+        <section class="section-group">
+            <div>
+                <h4>.postagens</h4>
+                <p class="post-desc">lista de postagens recentes</p>
+            </div>
+            <div>
+                {{- partial "listposts.html" . -}}
+            </div>
+        </section>
+
+        <section class="section-group hidden">
+            <div>
+                <h4>.descompilando</h4>
+                <p class="post-desc">meu livro sobre programação em C</p>
+            </div>
+            <div>
+                <p>
+                Todas as informações sobre o meu livro
+                </p>
+            </div>
+        </section>
+
+        <section class="section-group hidden">
+            <div>
+                <h4>.sobre_mim</h4>
+                <p class="post-desc">Mais informações sobre quem sou eu</p>
+            </div>
+            <div>
+                <p>
+                Sou um estudante de Engenharia da Computação de 22 anos, entusiasta na área da computação 
+                desde os 17, usuário de Linux desde os 18 e jogador de Purble Place desde os 5 anos.
+
+                Sempre gostei de aprender sobre os detalhes pouco falados que dizem respeito a programação 
+                de baixo nível e decidi criar um blog geral para compartilhar tudo que diz respeito a essa 
+                área que tanto gosto.
+
+                Aqui vou compartilhar tudo que achar minimamente interessante ou relevante, tudo de maneira 
+                gratuita (caso você queira mandar dinheiro não vou reclamar!) e com a linguagem mais acessível 
+                possível. Espero que goste!
+                </p>
+            </div>
+        </section>
+    </div>
+</div>
 {{ end }}

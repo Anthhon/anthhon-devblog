@@ -1,0 +1,144 @@
+/* GENERAL VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --bg1: #121212;
+    --bg2: #141414;
+    --orange: #ff8c00;
+    --bg-footer: #2e2e2e;
+
+    --desc-text: #676767;
+
+    --black: #010101;
+    --grey: #1e1e1e;
+    --white: #fefefe;
+    --white-glow: #fefefe24;
+}
+
+/* GENERAL */
+*:not(script, head, h1, span) {
+    size: auto;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "DM Mono", monospace;
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    transition: ease 0.2s;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+    overflow: auto;
+
+    background: linear-gradient(to top, var(--bg1) 55%, var(--bg2) 55%);
+}
+
+a {
+    padding: 0.1vw 0.2vw;
+    color: var(--orange);
+}
+
+header {
+    width: auto;
+    padding: 0.5vw;
+    background: var(--orange);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+    z-index: 1;
+}
+
+header p {
+    align-self: center;
+    color: var(--white);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+footer {
+    width: auto;
+    background: var(--black);
+    padding: 0.8vw;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+
+footer p {
+    align-self: center;
+    color: var(--grey);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+span {
+    color: var(--orange);
+}
+
+.main-group {
+    align-self: center;
+    flex-direction: row;
+    gap: 4vw;
+}
+
+.main-bar {
+    height: 80vh;
+    padding: 0.2vh;
+    background: var(--orange);
+    transform: translateY(-20vh);
+    z-index: 0;
+}
+
+/* MAIN MENU */
+.menu-title, .menu-options {
+    margin: 1vw;
+}
+
+.menu-title {
+    font-weight: 900;
+    text-shadow: 0 0 20px var(--white-glow);
+}
+
+.menu {
+    align-self: center;
+}
+
+.menu > *, .menu-option {
+    margin: 0.5vw;
+    align-self: flex-end;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.menu-option:hover {
+    transform: scale(1.2);
+    background: var(--orange);
+    color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+/* SECTIONS */
+
+.sections {
+    flex-direction: row;
+}
+
+.section-group {
+    align-self: center;
+    gap: 5vh;
+}
+
+/* POSTS */
+
+.post-desc {
+    font-family: "Source Code Pro", monospace;
+    color: var(--desc-text);
+    font-size: small;
+}

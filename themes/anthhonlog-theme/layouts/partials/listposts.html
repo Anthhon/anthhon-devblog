@@ -1,0 +1,9 @@
+{{ $dateFormatBr := "02 January 2006" }}
+<ul>
+    {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    <p>{{ .PublishDate.Format $dateFormatBr }}</p>
+    {{ end }}
+</ul>
