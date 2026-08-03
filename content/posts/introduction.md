@@ -1,7 +1,7 @@
 ---
-title: "Introduction"
+title: "Primeira postagem"
 date: 2026-07-31T12:03:15-03:00
 draft: false
 ---
 
-Welcome to the website
+Bem vindo ao meu site, essa é a primeira postagem feita!

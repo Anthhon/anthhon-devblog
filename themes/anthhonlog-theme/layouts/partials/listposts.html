@@ -1,9 +1,9 @@
 {{ $dateFormatBr := "02 January 2006" }}
-<ul>
+<ul class="post-list">
     {{ range .Site.RegularPages.ByPublishDate.Reverse }}
-    <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
-    <p>{{ .PublishDate.Format $dateFormatBr }}</p>
+    <div class="post-list-option" onclick="window.location.href='{{ .RelPermalink }}'">
+        <li class="post-list-title">{{ .Title }}</li>
+        <p style="transform: translateY(1px);" class="post-list-date">{{ .PublishDate.Format $dateFormatBr }}</p>
+    </div>
     {{ end }}
 </ul>

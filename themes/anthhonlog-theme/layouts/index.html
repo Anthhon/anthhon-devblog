@@ -14,8 +14,8 @@
     <div class="sections">
         <section class="section-group" id="section1">
             <div>
-                <h4>.postagens</h4>
-                <p class="post-desc">lista de postagens recentes</p>
+                <h4 class="section-title">.postagens</h4>
+                <p class="section-desc">lista de postagens recentes</p>
             </div>
             <div>
                 {{- partial "listposts.html" . -}}
@@ -24,8 +24,8 @@
 
         <section class="section-group hidden" id="section2">
             <div>
-                <h4>.descompilando</h4>
-                <p class="post-desc">meu livro sobre programação em C</p>
+                <h4 class="section-title">.descompilando</h4>
+                <p class="section-desc">meu livro sobre programação em C</p>
             </div>
             <div>
                 <p>
@@ -38,8 +38,8 @@
 
         <section class="section-group hidden" id="section3">
             <div>
-                <h4>.sobre_mim</h4>
-                <p class="post-desc">Mais informações sobre quem sou eu</p>
+                <h4 class="section-title">.sobre_mim</h4>
+                <p class="section-desc">Mais informações sobre quem sou eu</p>
             </div>
             <div>
                 {{ with .Site.GetPage "about-me.md" }}

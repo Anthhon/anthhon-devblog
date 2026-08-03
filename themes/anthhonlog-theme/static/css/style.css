@@ -99,10 +99,10 @@ span {
 }
 
 .main-bar {
-    height: 80vh;
+    height: auto;
+    overflow: hidden;
     padding: 0.2vh;
     background: var(--orange);
-    transform: translateY(-20vh);
     z-index: 0;
 }
 
@@ -116,15 +116,16 @@ span {
     text-shadow: 0 0 20px var(--white-glow);
 }
 
-.menu {
-    align-self: center;
-}
-
 .menu > *, .menu-option {
     margin: 0.5vw;
     align-self: flex-end;
     color: var(--white);
     font-weight: 500;
+}
+
+.menu {
+    margin-left: 4vw;
+    align-self: center;
 }
 
 .menu-option:hover {
@@ -151,16 +152,56 @@ span {
 }
 
 .section-group {
-    text-align: flex-start;
+    padding: 2vw;
     margin: 4vw 5vw 4vw 0;
-    overflow: scroll;
+
     align-self: center;
+    background: var(--black);
+
+    max-height: 60vh;
+    overflow: scroll;
+}
+
+.section-desc {
+    margin-bottom: 2vw;
+}
+
+.section-group > div > * {
+    font-size: small;
+    text-align: left;
 }
 
 /* POSTS */
 
-.post-desc {
+.section-desc {
     font-family: "Source Code Pro", monospace;
     color: var(--desc-text);
     font-size: small;
+}
+
+.post-list {
+    gap: 0.5vw;
+}
+
+.post-list-option {
+    gap: 1vw;
+    justify-items: center;
+    flex-direction: row;
+    background: var(--black);
+    padding: 0.2vw 1vw;
+
+    font-size: small;
+}
+
+.post-list-option:hover {
+    cursor: pointer;
+}
+
+.post-list-option > li {
+    color: var(--orange);
+}
+
+/** avoid black background at post listing **/
+#section1 {
+    background: none;
 }
