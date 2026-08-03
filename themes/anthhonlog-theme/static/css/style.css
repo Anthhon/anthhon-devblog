@@ -66,7 +66,6 @@ header p {
 
 footer {
     width: auto;
-    flex-direction: row;
     background: var(--black);
     padding: 0.8vw;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
@@ -76,6 +75,12 @@ footer p, footer a {
     color: var(--grey);
     font-weight: 800;
     font-size: 12px;
+}
+
+footer div {
+    gap: 1vw;
+    align-self: center;
+    flex-direction: row;
 }
 
 footer a:hover {

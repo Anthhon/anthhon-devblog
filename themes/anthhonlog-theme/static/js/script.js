@@ -1,5 +1,5 @@
-function switchMenuOption(self) {
-    const optionText = self.textContent.trim();
+function switchMenuOption(clickedButton) {
+    const optionText = clickedButton.textContent.trim();
     const sectionMap = {
         'Postagens': 'section1',
         'Descompilando': 'section2',
@@ -17,4 +17,9 @@ function switchMenuOption(self) {
     if (targetSection) targetSection.classList.remove('hidden');
 
     // Set selected menu option and title size
+    const options = document.querySelectorAll('.menu-option-selected');
+    options.forEach(option => {
+        option.classList = 'menu-option';
+    })
+    clickedButton.classList.add('menu-option-selected');
 }
