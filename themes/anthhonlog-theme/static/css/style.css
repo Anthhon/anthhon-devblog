@@ -41,7 +41,12 @@ body {
     justify-content: space-between;
     overflow: auto;
 
-    background: linear-gradient(to top, var(--bg1) 55%, var(--bg2) 55%);
+    /** NEVER REMOVE IT! **/
+    background-image: url("https://i.pinimg.com/736x/64/fb/35/64fb35d2126cbdd70eab59b20f27b3c4.jpg");
+    background-size: cover;
+    backdrop-filter: blur(75px);
+    /** old, plain and WORSE background **/
+    /**background: linear-gradient(to top, var(--bg1) 55%, var(--bg2) 55%);**/
 }
 
 a {
@@ -157,6 +162,7 @@ span {
 
     align-self: center;
     background: var(--black);
+    border-radius: 8px;
 
     max-height: 60vh;
     overflow: scroll;
