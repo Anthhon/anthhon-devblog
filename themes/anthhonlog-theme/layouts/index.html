@@ -3,16 +3,16 @@
     <div class="menu">
         <h1 class="menu-title">anthhon.log<span>_</span></h1>
         <nav class="menu-options">
-            <a class="menu-option" href="/posts">Postagens</a>
-            <a class="menu-option" href="/">Descompilando</a>
-            <a class="menu-option" href="/posts/about-me">Sobre mim</a>
+            <a class="menu-option-selected" onclick="switchMenuOption(this)">Postagens</a>
+            <a class="menu-option" onclick="switchMenuOption(this)">Descompilando</a>
+            <a class="menu-option" onclick="switchMenuOption(this)">Sobre mim</a>
         </nav>
     </div>
 
     <div class="main-bar"></div>
 
     <div class="sections">
-        <section class="section-group">
+        <section class="section-group" id="section1">
             <div>
                 <h4>.postagens</h4>
                 <p class="post-desc">lista de postagens recentes</p>
@@ -22,36 +22,29 @@
             </div>
         </section>
 
-        <section class="section-group hidden">
+        <section class="section-group hidden" id="section2">
             <div>
                 <h4>.descompilando</h4>
                 <p class="post-desc">meu livro sobre programação em C</p>
             </div>
             <div>
                 <p>
-                Todas as informações sobre o meu livro
+                {{ with .Site.GetPage "descompilando.md" }}
+                {{- .Content -}}
+                {{ end }}
                 </p>
             </div>
         </section>
 
-        <section class="section-group hidden">
+        <section class="section-group hidden" id="section3">
             <div>
                 <h4>.sobre_mim</h4>
                 <p class="post-desc">Mais informações sobre quem sou eu</p>
             </div>
             <div>
-                <p>
-                Sou um estudante de Engenharia da Computação de 22 anos, entusiasta na área da computação 
-                desde os 17, usuário de Linux desde os 18 e jogador de Purble Place desde os 5 anos.
-
-                Sempre gostei de aprender sobre os detalhes pouco falados que dizem respeito a programação 
-                de baixo nível e decidi criar um blog geral para compartilhar tudo que diz respeito a essa 
-                área que tanto gosto.
-
-                Aqui vou compartilhar tudo que achar minimamente interessante ou relevante, tudo de maneira 
-                gratuita (caso você queira mandar dinheiro não vou reclamar!) e com a linguagem mais acessível 
-                possível. Espero que goste!
-                </p>
+                {{ with .Site.GetPage "about-me.md" }}
+                {{- .Content -}}
+                {{ end }}
             </div>
         </section>
     </div>

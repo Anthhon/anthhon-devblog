@@ -5,5 +5,7 @@
         {{- partial "header.html" . -}}
         {{ block "main" . }}{{ end }}
         {{- partial "footer.html" . -}}
+
+        <script src="{{ absURL `js/script.js` }}"></script>
     </body>
 </html>

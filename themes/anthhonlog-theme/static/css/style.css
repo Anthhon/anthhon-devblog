@@ -1,4 +1,4 @@
-/* GENERAL VARIABLES */
+/* VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
@@ -66,16 +66,21 @@ header p {
 
 footer {
     width: auto;
+    flex-direction: row;
     background: var(--black);
     padding: 0.8vw;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 }
 
-footer p {
-    align-self: center;
+footer p, footer a {
     color: var(--grey);
     font-weight: 800;
     font-size: 12px;
+}
+
+footer a:hover {
+    color: var(--white);
+    transform: scale(1.1);
 }
 
 span {
@@ -124,6 +129,16 @@ span {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
 
+.menu-option-selected {
+    margin: 0.5vw;
+    align-self: flex-end;
+    font-weight: 500;
+    transform: scale(1.2);
+    color: var(--white);
+    background: var(--orange);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
 /* SECTIONS */
 
 .sections {
@@ -131,8 +146,10 @@ span {
 }
 
 .section-group {
+    text-align: flex-start;
+    margin: 4vw 5vw 4vw 0;
+    overflow: scroll;
     align-self: center;
-    gap: 5vh;
 }
 
 /* POSTS */
