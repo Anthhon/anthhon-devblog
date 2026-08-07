@@ -1,4 +1,5 @@
 /* VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
@@ -24,7 +25,7 @@
     display: flex;
     flex-direction: column;
 
-    font-family: "DM Mono", monospace;
+    font-family: "Google Sans Code", monospace;
     color: var(--white);
     text-decoration: none;
     text-align: center;
@@ -65,7 +66,7 @@ header {
 header p {
     align-self: center;
     color: var(--white);
-    font-weight: 800;
+    font-weight: 600;
     font-size: 12px;
 }
 
@@ -78,7 +79,7 @@ footer {
 
 footer p, footer a {
     color: var(--grey);
-    font-weight: 800;
+    font-weight: 400;
     font-size: 12px;
 }
 
@@ -203,13 +204,18 @@ span {
     transform: scale(1.08);
 }
 
-.post-list-option > li {
-    color: var(--orange);
+.post-list-option > p {
+    color: var(--grey);
 }
 
 .post-list-all-posts {
     justify-content: center;
     margin-top: 1vw;
+}
+
+.post-list-all-posts > li {
+    color: var(--orange);
+    font-weight: 600;
 }
 
 .main-post {
@@ -235,12 +241,13 @@ span {
 .post-content > h5,
 .post-content > h6 {
     color: var(--orange);
-    font-weight: 900;
+    font-weight: 700;
     font-size: x-large
 }
 
-.post-content > p, .post-content > a {
+.post-content > p {
     font-size: medium;
+    font-weight: 300;
 }
 
 .post-content > .highlight {
@@ -251,6 +258,10 @@ span {
 
 .post-content > .highlight > pre > code > span > span {
     color: none;
+}
+
+.post-content > p > a {
+    orange: var(--grey);
 }
 
 .post-highlight {
