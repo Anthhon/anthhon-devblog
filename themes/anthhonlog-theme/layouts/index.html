@@ -28,11 +28,13 @@
                 <p class="section-desc">meu livro sobre programação em C</p>
             </div>
             <div>
-                <p>
-                {{ with .Site.GetPage "descompilando.md" }}
-                {{- .Content -}}
-                {{ end }}
-                </p>
+                <div class="main-post post-highlight">
+                    <div class="post-content">
+                        {{ with .Site.GetPage "descompilando.md" }}
+                        {{- .Content -}}
+                        {{ end }}
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -42,9 +44,13 @@
                 <p class="section-desc">Mais informações sobre quem sou eu</p>
             </div>
             <div>
-                {{ with .Site.GetPage "about-me.md" }}
-                {{- .Content -}}
-                {{ end }}
+                <div class="main-post post-highlight">
+                    <div class="post-content">
+                        {{ with .Site.GetPage "about-me.md" }}
+                        {{- .Content -}}
+                        {{ end }}
+                    </div>
+                </div>
             </div>
         </section>
     </div>

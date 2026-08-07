@@ -11,5 +11,10 @@ Atualmente, estou escrevendo o **Descompilando** com o intuito de ajudar inician
 Caso você tenha curiosidade e queira ver mais sobre o livro, [clique aqui.](/book/)
 
 ```c
-bloco de código
+int <stdio.h>
+
+int main(void) {
+    printf("Hello, World\n");
+    return 0;
+}
 ```

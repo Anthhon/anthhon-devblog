@@ -90,7 +90,6 @@ footer div {
 
 footer a:hover {
     color: var(--white);
-    transform: scale(1.1);
 }
 
 span {
@@ -162,7 +161,6 @@ span {
 
     align-self: center;
     background: var(--black);
-    border-radius: 8px;
 
     max-height: 60vh;
     overflow: scroll;
@@ -177,20 +175,21 @@ span {
     text-align: left;
 }
 
-/* POSTS */
-
 .section-desc {
     font-family: "Source Code Pro", monospace;
     color: var(--desc-text);
     font-size: small;
 }
 
+/* POSTS */
+
 .post-list {
     gap: 0.5vw;
 }
 
-.post-list-option {
-    gap: 1vw;
+.post-list-option, .main-post {
+    gap: 4vw;
+    justify-content: space-between;
     justify-items: center;
     flex-direction: row;
     background: var(--black);
@@ -201,10 +200,70 @@ span {
 
 .post-list-option:hover {
     cursor: pointer;
+    transform: scale(1.08);
 }
 
 .post-list-option > li {
     color: var(--orange);
+}
+
+.post-list-all-posts {
+    justify-content: center;
+    margin-top: 1vw;
+}
+
+.main-post {
+    margin: 4vw;
+    flex-wrap: nowrap;
+    padding: 4vw;
+    overflow: scroll;
+}
+
+.post-content > * {
+    text-align: left;
+    margin-bottom: 1vw;
+}
+
+.post-content > * > * {
+    display: contents;
+}
+
+.post-content > h1,
+.post-content > h2,
+.post-content > h3,
+.post-content > h4,
+.post-content > h5,
+.post-content > h6 {
+    color: var(--orange);
+    font-weight: 900;
+    font-size: x-large
+}
+
+.post-content > p, .post-content > a {
+    font-size: medium;
+}
+
+.post-content > .highlight {
+    padding: 1vw;
+    background: var(--grey);
+    border: 1px ridge var(--orange);
+}
+
+.post-content > .highlight > pre > code > span > span {
+    color: none;
+}
+
+.post-highlight {
+    margin: 0;
+    padding: 0;
+}
+
+/* LISTS */
+
+.main-list {
+    margin: 4vw;
+    max-width: auto;
+    align-self: center;
 }
 
 /** avoid black background at post listing **/
